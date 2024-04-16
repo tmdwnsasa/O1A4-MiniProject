@@ -11,7 +11,10 @@
 
     <style>
         .title {
-            background-color: blue;
+            background-image: url(https://cdn.pixabay.com/photo/2016/03/27/22/06/sea-1284467_1280.jpg);
+            background-position: center;
+            background-size: cover;
+            
             height: 250px;
 
             display: flex;
@@ -20,11 +23,23 @@
             justify-content: center;
         }
 
+        .left_int {
+            background-color: white;
+            width: 500px;
+            margin-left: 300px;
+            margin-top: -10px;
+        }
+
+        .nl_image {
+            width: 500px;
+            margin: 50px auto auto auto;
+        }
+
         .introduce {
             background-color: green;
             height: 500px;
             width: 500px;
-            margin: 30px 300px 0px auto;
+            margin: -580px 300px 0px auto;
             padding: 30px;
         }
     </style>
@@ -54,12 +69,15 @@
 <body>
     <div>
         <h1 class="title">김나린의 개인 프로필</h1>
+        <
     </div>
-    <div>
-        <img>
+    <div class="left_int">
+        <img src="nl_image.jpg" class="nl_image">
+        <p>김나린(ISTP)</p>
+        <p>https://nalyn87.tistory.com/</p>
     </div>
     <div class="introduce">
-        <h4 onclick="hidepr()">- 자기소개</h4>
+        <h4 onclick="hidepr()">- 간단한 자기소개</h4>
         <p id="selfpr">
             안녕하세요! 저는~~
 
