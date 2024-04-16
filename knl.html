@@ -10,8 +10,32 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <style>
+        @font-face {
+            font-family: 'KCC-Hanbit';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/KCC-Hanbit.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'yg-jalnan';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            font-family: 'KCC-Hanbit';
+        }
+
+        body {
+            background-image: url(https://cdn.pixabay.com/photo/2016/03/27/22/06/sea-1284467_1280.jpg);
+            background-position: center;
+            background-size: cover;
+           
+        }
+
         .title {
-            background-color: blue;
             height: 250px;
 
             display: flex;
@@ -20,63 +44,152 @@
             justify-content: center;
         }
 
-        .introduce {
-            background-color: green;
-            height: 500px;
-            width: 500px;
-            margin: 30px 300px 0px auto;
-            padding: 30px;
+        .title>h1 {
+            font-family: 'yg-jalnan';
+            font-size: 50pt;
+            color: white;
+            text-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
         }
+
+        .title>button {
+            width: 100px;
+            margin-top: 20px;
+            text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .left_int {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            border-radius: 30px;
+
+            width: 500px;
+            height: 620px;
+            float: left;
+            margin: 0px auto 20px 350px;
+            padding: 50px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            line-height: 2.5;
+            text-align: center;
+        }
+
+        .left_int>h5 {
+            margin-top: 10px;
+        }
+
+        .left_int>a {
+            margin-top: -15px;
+            font-size: 15pt;
+        }
+
+        .nl_image {
+            width: 400px;
+            margin: 10px auto 30px auto;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .introduce {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            border-radius: 30px;
+
+            height: auto;
+            width: 500px;
+            float: right;
+            margin-right: 350px;
+            padding: 50px;
+
+        }
+
+        .introduce>p {
+            margin-left: 15px;
+        }
+
+        .introduce>h4 {
+            width: max-content;
+        }
+
     </style>
 
     <script>
-        $(document).ready(function () {
-            hidepr();
-            hideadv();
-            hidestyle();
-        })
-
-        function hidepr() {
-            $('#selfpr').toggle()
+        function hideint() {
+            $('#myint').slideToggle(300);
         }
 
         function hideadv() {
-            $('#advantage').toggle()
+            $('#myadv').slideToggle(300);
         }
 
         function hidestyle() {
-            $('#collastyle').toggle()
+            $('#mystyle').slideToggle(300);
         }
+
+        function hidestmi() {
+            $('#mytmi').slideToggle(300);
+        }
+
+        function hidepobu() {
+            $('#mypobu').slideToggle(300);
+        }
+
     </script>
 
 </head>
 
 <body>
-    <div>
-        <h1 class="title">김나린의 개인 프로필</h1>
+    <div class="title">
+        <h1>"일단 해보자!"</h1>
+        <button type="button" class="btn btn-outline-light" onclick="location.href='index.html'">뒤로가기</button>
+
     </div>
-    <div>
-        <img>
+    <div class="left_int">
+        <img src="nl_image.jpg" class="nl_image">
+        <h2>김나린(20세)</h2>
+        <h5>MBTI : ISTP</h5>
+        <a href="https://nalyn87.tistory.com/" target="_blank">블로그(클릭!)</a>
     </div>
     <div class="introduce">
-        <h4 onclick="hidepr()">- 자기소개</h4>
-        <p id="selfpr">
-            안녕하세요! 저는~~
+        <h4 class="int_title" onclick="hideint()">• 취미</h4>
+        <p id="myint" style="display:none">
+            저의 취미는 게임입니다!
+            모바일 게임, 컴퓨터 게임, 퍼즐게임, 시뮬레이션게임, fps 등 장르 가리지 않고 좋아합니다!
 
         </p>
 
-        <h4 onclick="hideadv()">- 장점</h4>
-        <p id="advantage">
-            저의 장점은~
+        <h4 class="int_adv" onclick="hideadv()">• 장점</h4>
+        <p id="myadv" style="display:none">
+            저의 장점은 반응이 빠르다는 것입니다!
+            연락이나 이메일, 수정된 사항 등을 알아채는 것이 빠릅니다!
 
         </p>
 
-        <h4 onclick="hidestyle()">- 협업 스타일</h4>
-        <p id="collastyle">
-            저의 협업 스타일은~
+        <h4 class="int_style" onclick="hidestyle()">• 협업 스타일</h4>
+        <p id="mystyle" style="display:none">
+            저의 협업 스타일은 경청하는 스타일입니다!
+            팀원들의 의견을 듣고 조율하면서 서로가 만족할 결과를 내는 편입니다!
+
+        </p>
+
+        <h4 class="int_tmi" onclick="hidestmi()">• TMI</h4>
+        <p id="mytmi" style="display:none">
+            저의 TMI는 7년째 한 스트리머만 좋아하고 있다는 것입니다!
+            이번에 굿즈 나왔길래 샀습니다!ㅎ
+
+        </p>
+
+        <h4 class="int_pobu" onclick="hidepobu()">• 앞으로의 포부</h4>
+        <p id="mypobu" style="display:none">
+            앞으로 힘든 일이나 어려운 일들도 많이 생길텐데
+            개발을 시작했을 때의 마음을 잃지 않고 임할 것입니다!
 
         </p>
     </div>
+
 </body>
 
 </html>
