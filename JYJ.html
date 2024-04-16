@@ -129,13 +129,13 @@
             page.addEventListener('mousemove', (event) => {
                 const width = $(window).width();
                 const height = $(window).height();
-
+                
                 const moveX = (event.clientX - width / 2) / width;
                 const moveY = (event.clientY - height / 2) / height;
-
+                
                 const backMoveX = -moveX * 30;
                 const backMoveY = -moveY * 10;
-
+                
                 $('.move_back').css({
                     transform: `translate(${backMoveX}px, ${backMoveY}px)`
                 });
@@ -152,16 +152,14 @@
                 const a = data[3];  // 알파
 
                 const color = `rgba(${r}, ${g}, ${b}, ${a})`;
-
+                
                 console.log("color");
-
+                
                 const bar = document.querySelector('.upper_bar');
                 const bar2 = document.querySelector('body');
                 // 배경색 지정
                 bar.style.background = color;
                 bar2.style.background = color;
-
-
             })
         }
     </script>
@@ -189,7 +187,6 @@
                         <div class="Name_MBTI">
                             <h3>정윤제 (ENTJ) </h3>
                             <a id="link1" href="https://velog.io/@tmdwns_as/" target="_blank">블로그(클릭!)</a>
-
                         </div>
 
                         <div class="explanation">
@@ -200,8 +197,6 @@
                             <p>4. 앞으로의 포부 : 이번 캠프를 통해 제 서버관련 지식을 늘리고 현업에서도 도움이 되는 인재가 되고싶습니다.</p>
                             <p>5 tmi : 스팀게임 200개, 디자인 겁나 못함</p>
                         </div>
-
-
                     </div>
                 </div>
             </div>
