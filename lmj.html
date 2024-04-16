@@ -1,78 +1,181 @@
-<<<<<<< HEAD
-이민준 파일 asdads
-=======
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>이민준 개인프로필</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Hahmlet:wght@100..900&family=Nanum+Gothic&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Hahmlet:wght@100..900&family=Nanum+Gothic&display=swap");
       * {
-        font-family: 'Hahmlet', serif;
+        font-family: "Hahmlet", serif;
         font-optical-sizing: auto;
-        font-weight: <weight>;
+        font-weight: weight;
         font-style: normal;
+      }
+
+      body {
+        height: 1080px;
+        background: #e6e6e6;
       }
 
       .team {
         width: 100%;
-        height: 100px;
-        margin-top: 20px;
-        font-size: 60px;
-        background-color: skyblue;
-        color: ##1c1c1c;
+        height: 70px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-size: 40px;
+        font-weight: 500;
+        box-shadow: 0px 0px 0px 2px #585858;
         display: flex; /*센터*/
-        flex-direction: column; /* row = 가로정렬 / column = 세로정렬 */
-        align-items: center;
-        justify-content: center; /* 상단 조절 */
+        align-items: center; /* 상단 조절 */
+        justify-content: center; /* 가운데 조절 */
       }
 
       .myphoto {
-        width: 400px;
-        height: 400px;
-        margin: 90px 100px 0px 100px;
-        background-image: url('https://images.unsplash.com/photo-1511992243105-2992b3fd0410?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-        background-position: center;
-        background-size: cover;
+        display: flex; /*센터*/
+        flex-direction: row; /* row = 가로정렬 / column = 세로정렬 */
+        justify-content: center; /* 상단 조절 */
+        margin: 0px auto 0px auto;
+        box-shadow: 0px 0px 0px 2px #585858;
+        width: 1300px;
+        padding-bottom: 10px;
+        border-radius: 10px;
       }
 
-      .myname {
-        margin: 10px 100px 0px 100px;
-        width: 400px;
-        height: 60px;
+      .myphoto > img {
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+        margin: auto 0px auto 250px;
+      }
+
+      .mynames {
         font-size: 20px;
-        display: flex; /*센터*/
-        flex-direction: column; /* row = 가로정렬 / column = 세로정렬 */
-        align-items: center;
-        justify-content: center; /* 상단 조절 */
+        font-weight: 500;
+        margin: -120px 500px 100px 0px;
+        display: flex; /*기본값?*/
+        justify-content: center; /* 중간 */
+      }
+
+      #name {
+        font-size: 20px;
+      }
+      #link2 {
+        color: black;
       }
 
       .myinfor {
-        width: 200px;
-        background-color: gray;
-        margin: -470px 0px 0px 600px;
+        width: 700px;
+        height: 550px;
+        margin-left: 80px;
+        display: flex; /*기본값?*/
+        flex-direction: column; /* row = 가로정렬 / column = 세로정렬 */
+        justify-content: center; /* 상단 정렬 */
+        padding-left: 30px;
+      }
+
+      .myinfor > span {
+        color: black;
+        line-height: 150%;
+        font-size: 30px;
+        font-weight: 600;
+      }
+
+      .myinfor > span2 {
+        font-size: 20px;
+        font-weight: 400;
+      }
+
+      .mybtn {
+        display: flex; /*기본값?*/
+        flex-direction: row; /* row = 가로정렬 / column = 세로정렬 */
+        justify-content: center; /* 상단 정렬 */
       }
     </style>
+
+    <script>
+      $(document).ready(function () {
+        $("#inforone1").hide();
+        $("#inforone2").hide();
+        $("#inforone3").hide();
+        $("#inforone4").hide();
+        $("#inforone5").hide();
+      });
+
+      function infor1() {
+        $("#inforone1").slideToggle(200);
+      }
+
+      function infor2() {
+        $("#inforone2").slideToggle(200);
+      }
+
+      function infor3() {
+        $("#inforone3").slideToggle(200);
+      }
+
+      function infor4() {
+        $("#inforone4").slideToggle(200);
+      }
+
+      function infor5() {
+        $("#inforone5").slideToggle(200);
+      }
+    </script>
   </head>
 
   <body>
     <div>
-      <h1 class="team"></h1>
+      <p class="team">Information</p>
     </div>
-    <div class="myphoto"></div>
-    <p></p>
-    <div class="myname">
-      <span>이름 : 이민준<br />MBTI : ISTJ</span>
+
+    <div class="myphoto">
+      <img
+        src="https://images.unsplash.com/photo-1511992243105-2992b3fd0410?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+      />
+
+      <div class="myinfor">
+        <span onclick="infor1()">·나의 취미 </span>
+        <span2 id="inforone1">게임을 좋아합니다.</span2><br />
+
+        <span onclick="infor2()">·나의 장점</span>
+        <span2 id="inforone2">하나에 빠지면 집중력이 뛰어나요!</span2><br />
+
+        <span onclick="infor3()">·나의 협업 스타일</span>
+        <span2 id="inforone3">내 의견보다는 팀원의 의견을 더 중요시 하고, 따라가는 스타일이에요 :) </span2><br />
+
+        <span onclick="infor4()">·나의 TMI?</span>
+        <span2 id="inforone4">음..</span2><br />
+
+        <span onclick="infor5()">·앞으로의 포부</span>
+        <span2 id="inforone5">팀원들에게 피해주지 않고 도움이 될 수 있는 개발자가 되겠습니다!</span2>
+      </div>
     </div>
-    <div class="myinfor">자기소개글1111111111111111111111111111111111111111111111111111111111111111111111qwdqwd <br />qwdqw</div>
+
+    <div class="mynames">
+      <p1>
+        <span id="name">&nbsp;&nbsp;이름 : 이민준</span> <br />
+        &nbsp;MBTI :
+        <a id="link2" href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-istj" target="_blank">ISTJ</a> <br />
+        Blog :
+        <a id="link2" href="https://velog.io/@minjun0702/posts" target="_blank"> 이동하기</a>
+      </p1>
+    </div>
+
+    <div class="mybtn">
+      <div class="btn-group" role="group" aria-label="Default button group">
+        <button type="button" class="btn btn-outline-dark">이전 팀원</button>
+        <button type="button" class="btn btn-outline-dark">메인 페이지</button>
+        <button type="button" class="btn btn-outline-dark">다음 팀원</button>
+      </div>
+    </div>
   </body>
 </html>
->>>>>>> ae6f67e198ca1c8b26f1ceee6eb467eee6595995
