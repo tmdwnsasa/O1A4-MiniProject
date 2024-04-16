@@ -1,0 +1,23 @@
+h3{
+    color: black;
+    font-size: 20px;
+    text-align: left;
+}
+.toptitle{
+    background-color:  gray;
+    height: 50px;
+    border: 5px solid gray;
+}
+.box{
+    float: left;
+    box-sizing: content-box;
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+    padding: 30px;
+    border: 2px solid red;
+}
+.main{
+    float: right;
+    text-align: left;
+}
