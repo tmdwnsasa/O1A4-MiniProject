@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조민수 프로필</title>
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Gaegu&family=Stylish&display=swap" rel="stylesheet"> <!-- HEADER 용-->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet"> <!-- 본문용 -->
+    <!-- 부트스트랩  CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- CSS -->
+    <link href="css/reset.css" rel="stylesheet"> <!--초기화 용-->
+    <link href="css/cms_profile.css" rel="stylesheet"> 
+</head>
+<body>
+    <div class="container-md">
+        <div id="header" class="row text-center">
+            <h1 class="header_title">Introduce Myself</h1>
+        </div> <!-- header 닫는 태그 -->
+        <div id="content" class="row ">
+            <div id="left_section" class="col text-center">
+                <div id="profile_img_box">
+                    <span id="img_span_box">" CLICK "</span>
+                    <img src="img/profile.jpg" alt="조민수프로필사진" style="display: none;" id="img_ms">
+                </div>
+                <div>
+                    <div class="intro_box">
+                        <span>조민수</span>
+                        <span>(26세)</span>
+                        <span>[MBTI]</span>
+                        <span>ENFP</span>
+                    </div>
+                    <div>
+                        <a href="https://minsoocho.tistory.com/" target="_blank" title="조민수의 블로그">
+                            <img src="img/tistory_logo.png" alt="블로그로고" class="tistory_logo">
+                            <span>민수의 개발 블로그</span>
+                        </a>
+                    </div>
+                </div>
+            </div> <!-- left_section 닫는 태그 -->
+            <div id="right_section" class="col">
+                <p>
+                    안녕하세요!<br>
+                    그 누구보다 지식이 부족한 초보개발자 조민수입니다.<br>
+                    20년가까이 악기와 음악을 공부하며,
+                    코딩과는 전혀 거리가 먼 인생을 살아가던 사람입니다!
+                    저는 다른사람들에 비해 학습하고 이해하는 과정이 조금 느린편이긴하지만, 
+                    한번 이해하면 오래기억하는 장점이 있습니다. <br>
+                    또한, 극강의 ENFP로 친화력이 좋고, 소통 하는것을 좋아하는것을 바탕으로 
+                    팀 협업 간에 동료들과 많은대화를 통해 배울점을 배워가고 
+                    나눌수 있는 부분을 나눠가며 일을 진행을합니다. <br>
+                    이번 Node.js5기 부트캠프를 통해,
+                    보다 성장한, 보다 전문성 있는 개발자가 되도록 노력하겠습니다.
+                </p>
+            </div> <!-- right_section 닫는 태그 -->
+        </div> <!-- content 닫는 태그 -->
+    </div> <!-- container 닫는 태그 -->
+
+    <!-- JS -->
+    <script src="js/cms_profile.js"></script>
+    <!--부트스트랩 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
