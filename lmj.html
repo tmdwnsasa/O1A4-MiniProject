@@ -55,6 +55,8 @@
         height: 300px;
         border-radius: 20px;
         margin: auto 0px auto 250px;
+        object-fit: cover;
+        object-position: 1% 100%;
       }
 
       .mynames {
@@ -99,19 +101,6 @@
         flex-direction: row; /* row = 가로정렬 / column = 세로정렬 */
         justify-content: center; /* 상단 정렬 */
       }
-
-      #profile_img_box > span {
-        width: 300px;
-        height: 350px;
-        background-color: rgba(57, 149, 255, 0.519);
-        display: inline-block;
-        font-family: "Gaegu", sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 30px;
-        line-height: 310px;
-        border-radius: 10px;
-      }
     </style>
 
     <script>
@@ -151,9 +140,7 @@
     </div>
 
     <div class="myphoto">
-      <img
-        src="https://images.unsplash.com/photo-1511992243105-2992b3fd0410?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-      />
+      <img src="mj_image.jpg" />
 
       <div class="myinfor">
         <span onclick="infor1()">·나의 취미 </span>
