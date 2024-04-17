@@ -5,21 +5,63 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>test</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
   <style>
     /* 나린님, 민준님 */
     /* ================================================================= */
     /* 민수님 */
     /* ================================================================= */
-    /* 저하고 지훈님 */
+
+    .CommentField {
+      width: 800px;
+      background-color: #FAFAFA;
+      border-top: 1px solid #E8E8E8;
+      border-bottom: 1px solid #E8E8E8;
+      margin-left: 200px;
+      padding: 20px 20px 20px 20px;
+    }
+
+    .form-floating-name{
+      border: 1px solid #E8E8E8;
+      border-radius: 7px;
+      width: 200px;
+      margin-bottom: 10px;
+    }
+
+    .form-floating-comment{
+      border: 1px solid #E8E8E8;
+      border-radius: 7px;
+      margin-bottom: 10px;
+    }
+
+    .form-control {
+      height: 50px;
+    }
+
+    .label4comment {
+      color: color(105, 105, 105);
+    }
+
+    .btn-submit{
+      width: 60px;
+      border: none;
+      border-radius: 25px;
+      background-color: #8CBCC4;
+      ;
+      color: white;
+      padding: 5px 5px 5px 5px;
+      margin-left: 700px;
+    }
   </style>
 
-  <script>
+  <script type="module">
     // 나린님, 민준님
     /* ================================================================= */
     // 민수님
     /* ================================================================= */
-    // 저하고 지훈님
+
   </script>
 </head>
 
@@ -28,7 +70,20 @@
   <!-- ================================================================= -->
   <!-- 민수님 -->
   <!-- ================================================================= -->
-  <!-- 저하고 지훈님 -->
+  <div class="CommentField">
+    <div class="form-floating-name">
+      <div class="form-floating name">
+        <input type="text" class="form-control" id="floatingInputGroup2" placeholder="Username" >
+        <label style="color:#D6D6D6" for="floatingInputGroup2">이름</label>
+      </div>
+    </div>
+    <div class="form-floating-comment">
+      <div class="form-floating name">
+        <textarea type="text" class="form-control"></textarea>
+      </div>
+    </div>
+    <button type="button" class="btn-submit">입력</button>
+  </div>
 </body>
 
 </html>
