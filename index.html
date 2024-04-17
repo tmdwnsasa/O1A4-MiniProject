@@ -15,22 +15,22 @@
     /* ================================================================= */
 
     .CommentField {
-      width: 800px;
+      width: 80%;
       background-color: #FAFAFA;
       border-top: 1px solid #E8E8E8;
       border-bottom: 1px solid #E8E8E8;
-      margin-left: 200px;
+      margin: 0 auto 0 auto;
       padding: 20px 20px 20px 20px;
     }
 
-    .form-floating-name{
+    .form-floating-name {
       border: 1px solid #E8E8E8;
       border-radius: 7px;
       width: 200px;
       margin-bottom: 10px;
     }
 
-    .form-floating-comment{
+    .form-floating-comment {
       border: 1px solid #E8E8E8;
       border-radius: 7px;
       margin-bottom: 10px;
@@ -44,19 +44,19 @@
       color: color(105, 105, 105);
     }
 
-    .btn-submit{
+    .btn-submit {
       width: 60px;
       border: none;
       border-radius: 25px;
       background-color: #8CBCC4;
-      ;
       color: white;
       padding: 5px 5px 5px 5px;
       margin-left: 700px;
     }
+
     /* 저하고 지훈님 */
-    .guestbook{
-      width: 100%;
+    .guestbook {
+      width: 80%;
       display: flex;
       flex-direction: column;
       text-align: start;
@@ -64,25 +64,28 @@
       padding-left: 30px;
       padding-bottom: 10px;
       border-bottom: 1px solid #d6d6d6;
-      }
-      .username{
-        margin-bottom: 10px;
-        padding-left: 10px;
-        padding-bottom: 10px;
-        font-size: larger;
-      }
-      .comment{
-        color: #666666;
-        margin-bottom: 10px;
-        padding-left: 10px;
-      }
-      .date{
-        color: #666666;
-        font-size: smaller;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        padding-left: 10px;
-      }
+    }
+
+    .username {
+      margin-bottom: 10px;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      font-size: larger;
+    }
+
+    .comment {
+      color: #666666;
+      margin-bottom: 10px;
+      padding-left: 10px;
+    }
+
+    .date {
+      color: #666666;
+      font-size: smaller;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding-left: 10px;
+    }
   </style>
 
   <script type="module">
@@ -102,7 +105,7 @@
   <div class="CommentField">
     <div class="form-floating-name">
       <div class="form-floating name">
-        <input type="text" class="form-control" id="floatingInputGroup2" placeholder="Username" >
+        <input type="text" class="form-control" id="floatingInputGroup2" placeholder="Username">
         <label style="color:#D6D6D6" for="floatingInputGroup2">이름</label>
       </div>
     </div>
@@ -112,51 +115,52 @@
       </div>
     </div>
     <button type="button" class="btn-submit">입력</button>
-  <!-- 저하고 지훈님 -->
-  <div class="guestbook">
-    <div class="username">
-      <strong>user name</strong>
-    </div>
-    <div class="comment">
-      방명록내용
-    </div>
-    <div class="date">
-      날짜
-    </div>
   </div>
-  <div class="guestbook">
-    <div class="username">
-      <strong>user name</strong>
+    <!-- 저하고 지훈님 -->
+    <div class="guestbook">
+      <div class="username">
+        <strong>user name</strong>
+      </div>
+      <div class="comment">
+        방명록내용
+      </div>
+      <div class="date">
+        날짜
+      </div>
     </div>
-    <div class="comment">
-      방명록내용
+    <div class="guestbook">
+      <div class="username">
+        <strong>user name</strong>
+      </div>
+      <div class="comment">
+        방명록내용
+      </div>
+      <div class="date">
+        날짜
+      </div>
     </div>
-    <div class="date">
-      날짜
+    <div class="guestbook">
+      <div class="username">
+        <strong>user name</strong>
+      </div>
+      <div class="comment">
+        방명록내용
+      </div>
+      <div class="date">
+        날짜
+      </div>
     </div>
-  </div>
-  <div class="guestbook">
-    <div class="username">
-      <strong>user name</strong>
+    <div class="guestbook">
+      <div class="username">
+        <strong>user name</strong>
+      </div>
+      <div class="comment">
+        방명록내용
+      </div>
+      <div class="date">
+        날짜
+      </div>
     </div>
-    <div class="comment">
-      방명록내용
-    </div>
-    <div class="date">
-      날짜
-    </div>
-  </div>
-  <div class="guestbook">
-    <div class="username">
-      <strong>user name</strong>
-    </div>
-    <div class="comment">
-      방명록내용
-    </div>
-    <div class="date">
-      날짜
-    </div>
-  </div>
 </body>
 
 </html>
