@@ -5,10 +5,126 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>test</title>
-  <!-- 슬라이더 플러그인의 JavaScript 파일을 로드합니다. -->
-  <script src=""></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
   <style>
     /* 나린님, 민준님 */
+    /* width : 80%
+      margin : 0 auto 0 auto; */
+
+    body {
+      background-image: url("https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+      background-size: cover;
+    }
+
+    /* 
+.mymain {
+  width: 80%;
+  margin: 0 auto 0 auto
+} */
+
+
+    .mytitle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      background-color: green;
+      background-size: cover;
+
+      height: 150px;
+
+      font-size: 30pt;
+    }
+
+    .mainimg {
+      height: 500px;
+    }
+
+    .myhome {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.pexels.com/photos/633520/pexels-photo-633520.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+      background-size: cover;
+      background-position: center 900px;
+
+      margin: 30px;
+
+      color: white;
+
+      position: relative;
+    }
+
+    #teamint {
+      position: absolute;
+      left: 70px;
+    }
+
+    #pjtint {
+      position: absolute;
+      right: 160px;
+    }
+
+    .myhome>p>span {
+      font-size: 20pt;
+      font-weight: bold;
+    }
+
+    .profile {
+      height: 600px;
+      margin: 30px 0px 30px 0px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    .card {
+      margin-left: 80px;
+      box-shadow: 1px 1px 5px 1px gray;
+      background-color: white;
+    }
+
+    .list-group,
+    .list-group>li {
+      background-color: white;
+    }
+
+
+    .card>img {
+      object-fit: cover;
+    }
+
+    .card-img-top {
+      height: 230px;
+      background-color: white;
+    }
+
+    .card-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin: -5px 0px -5px 0px;
+    }
+
+    .card-body,
+    .list-group>li {
+      font-weight: 550;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-link {
+      margin: -10px 0px -10px 0px;
+    }
+
     /* ================================================================= */
     /* 민수님 */
 
@@ -18,11 +134,7 @@
       margin: 0px auto 0px auto;
     }
 
-      {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+
 
     ul,
     li {
@@ -256,20 +368,211 @@
 
 
     /* ================================================================= */
+    .EntireGuestBook {}
+
+    .CommentField {
+      width: 80%;
+      height: 200px;
+      background-color: #fafafa;
+      border-top: 1px solid #e8e8e8;
+      border-bottom: 1px solid #e8e8e8;
+      margin: 0 auto 0 auto;
+      padding: 20px 20px 20px 20px;
+    }
+
+    .form-floating-name {
+      width: 200px;
+      border: 1px solid #e8e8e8;
+      border-radius: 7px;
+      margin-bottom: 10px;
+    }
+
+    .form-floating-comment {
+      border: 1px solid #e8e8e8;
+      border-radius: 7px;
+      margin-bottom: 10px;
+    }
+
+    .form-control {
+      height: 50px;
+    }
+
+    .label4comment {
+      color: color(105, 105, 105);
+    }
+
+    .btn-submit {
+      width: 60px;
+      border: none;
+      border-radius: 25px;
+      background-color: #8cbcc4;
+      color: white;
+      padding: 5px 5px 5px 5px;
+      float: right;
+    }
+
     /* 저하고 지훈님 */
+    .guestbook {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+      margin: 0 auto 0 auto;
+      padding-left: 30px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #d6d6d6;
+    }
+
+    .username {
+      margin-bottom: 10px;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      font-size: larger;
+    }
+
+    .comment {
+      color: #666666;
+      margin-bottom: 10px;
+      padding-left: 10px;
+    }
+
+    .date {
+      color: #666666;
+      font-size: smaller;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding-left: 10px;
+    }
   </style>
 
-  <script>
+  <script type="module">
     // 나린님, 민준님
+    function zoomIn(event) {
+      event.target.style.transform = "scale(1.07)"; //1.2배 확대
+      event.target.style.zIndex = 1;
+      event.target.style.transition = "all 0.5s"; // 속도
+    }
+
+    function zoomOut(event) {
+      event.target.style.transform = "scale(1)";
+      event.target.style.zIndex = 0;
+      event.target.style.transition = "all 0.3s";
+    }
     /* ================================================================= */
     // 민수님
     /* ================================================================= */
-    // 저하고 지훈님
   </script>
 </head>
 
 <body>
+
+  <div class="mymain">
+    <div class="mytitle">
+      <h1>O1A4</h1>
+    </div>
+    <div class="myhome">
+      <div id="teamint">
+        <span>안녕하세요 O1A4입니다</span><br>
+        팀소개글팀소개글팀소개글팀소개글팀소개글<br>
+        팀소개글팀소개글팀소개글팀소개글팀소개글<br>
+        팀소개글팀소개글팀소개글팀소개글팀소개글<br>
+        팀소개글팀소개글팀소개글팀소개글팀소개글<br>
+      </div>
+      <img class="mainimg"
+        src="https://images.pexels.com/photos/1424536/pexels-photo-1424536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+      <p id="pjtint">
+        <span>프로젝트 이름</span><br>
+        어떤 프로젝트인지 간단하게 설명하는 글
+      </p>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+
+
+
+  <!-- ================================================================= -->>
+  <!-- 저하고 지훈님 -->
+
   <!-- 나린님, 민준님 -->
+  <div>
+    <div class="profile">
+      <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+        <img src="PhotoJYJ.png" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">정윤제(리더)</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Blood type : A</li>
+          <li class="list-group-item">MBTI : ENTJ</li>
+          <li class="list-group-item">Blog :&nbsp;<a href="https://velog.io/@tmdwns_as/posts" target="_blank">link</a>
+          </li>
+        </ul>
+        <div class="card-body">
+          <a href="JYJ.html" class="card-link">상세정보</a>
+        </div>
+      </div>
+      <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+        <img src="img/profile.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">조민수</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Blood type : A</li>
+          <li class="list-group-item">MBTI : ENFP</li>
+          <li class="list-group-item">Blog :&nbsp;<a href="https://minsoocho.tistory.com/" target="_blank">link</a></li>
+        </ul>
+        <div class="card-body">
+          <a href="cms_profile.html" class="card-link">상세정보</a>
+        </div>
+      </div>
+      <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+        <img src="nl_image.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">김나린</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Blood type : A</li>
+          <li class="list-group-item">MBTI : ISTP</li>
+          <li class="list-group-item">Blog :&nbsp;<a href="https://nalyn87.tistory.com/" target="_blank">link</a></li>
+        </ul>
+        <div class="card-body">
+          <a href="knl.html" class="card-link">상세정보</a>
+        </div>
+      </div>
+      <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+        <img src="mj_image.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">이민준</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Blood type : O</li>
+          <li class="list-group-item">MBTI : ISTJ</li>
+          <li class="list-group-item">Blog :&nbsp;<a href="https://velog.io/@minjun0702/posts" target="_blank">link</a>
+          </li>
+        </ul>
+        <div class="card-body">
+          <a href="LMJ.html" class="card-link">상세정보</a>
+        </div>
+      </div>
+      <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+        <img src="LJHPHOTOFINAL.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">이지훈</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Blood type : A</li>
+          <li class="list-group-item">MBTI : INTP</li>
+          <li class="list-group-item">Blog :&nbsp;<a href="https://piggytiger.tistory.com/" target="_blank">link</a>
+          </li>
+        </ul>
+        <div class="card-body">
+          <a href="LJH.html" class="card-link">상세정보</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ================================================================= -->
   <div class="sizing">
     <div class="slidebox">
@@ -309,13 +612,55 @@
     </div>
     <div>
       <h3>프로젝트명</h3>
-        <p> 프로젝트내용</p>
+      <p> 프로젝트내용</p>
     </div>
   </div>
-
-
-  <!-- ================================================================= -->>
-  <!-- 저하고 지훈님 -->
+  <!-- ================================================================= -->
+  <div class="EntireGuestBook">
+    <div class="CommentField">
+      <div class="form-floating-name">
+        <div class="form-floating name">
+          <input type="text" class="form-control" id="floatingInputGroup2" placeholder="Username" />
+          <label style="color: #d6d6d6" for="floatingInputGroup2">이름</label>
+        </div>
+      </div>
+      <div class="form-floating-comment">
+        <div class="form-floating name">
+          <textarea type="text" class="form-control"></textarea>
+        </div>
+      </div>
+      <button type="button" class="btn-submit">입력</button>
+    </div>
+    <!-- 저하고 지훈님 -->
+    <div class="guestbook">
+      <div class="username">
+        <strong>user name</strong>
+      </div>
+      <div class="comment">방명록내용</div>
+      <div class="date">날짜</div>
+    </div>
+    <div class="guestbook">
+      <div class="username">
+        <strong>user name</strong>
+      </div>
+      <div class="comment">방명록내용</div>
+      <div class="date">날짜</div>
+    </div>
+    <div class="guestbook">
+      <div class="username">
+        <strong>user name</strong>
+      </div>
+      <div class="comment">방명록내용</div>
+      <div class="date">날짜</div>
+    </div>
+    <div class="guestbook">
+      <div class="username">
+        <strong>user name</strong>
+      </div>
+      <div class="comment">방명록내용</div>
+      <div class="date">날짜</div>
+    </div>
+  </div>
 </body>
 
 </html>
