@@ -128,11 +128,6 @@
     /* ================================================================= */
     /* 민수님 */
 
-    .container-md {
-      width: 80%;
-      margin: 0px auto 0px auto;
-    }
-
 
 
     ul,
@@ -365,18 +360,20 @@
       }
     }
 
-
     /* ================================================================= */
     .EntireGuestBook {}
 
 
     .CommentField {
       width: 80%;
-      height: 200px;
-      background-color: #fafafa;
-      border-top: 1px solid #e8e8e8;
-      border-bottom: 1px solid #e8e8e8;
       margin: 0 auto 0 auto;
+    }
+
+    .CommentField {
+      height: 230px;
+      background-color: #FAFAFA;
+      border-top: 1px solid #E8E8E8;
+      border-bottom: 1px solid #E8E8E8;
       padding: 20px 20px 20px 20px;
     }
 
@@ -413,11 +410,10 @@
 
     /* 저하고 지훈님 */
     .guestbook {
-      width: 80%;
       display: flex;
       flex-direction: column;
       text-align: start;
-      margin: 0 auto 0 auto;
+      margin-top: 10px;
       padding-left: 30px;
       padding-bottom: 10px;
       border-bottom: 1px solid #d6d6d6;
@@ -461,6 +457,12 @@
     /* ================================================================= */
     // 민수님
     /* ================================================================= */
+
+    $("#btn-submit").click(async function () {
+      let username = $('#username').val();
+      let comment = $('#comment').val();
+      let date = $('#date').val();
+
   </script>
 </head>
 
@@ -486,15 +488,6 @@
       </p>
     </div>
   </div>
-
-  <!-- ================================================================= -->
-
-
-
-  <!-- ================================================================= -->>
-  <!-- 저하고 지훈님 -->
-
-  <!-- 나린님, 민준님 -->
   <div>
     <div class="profile">
       <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
@@ -635,7 +628,7 @@
           <textarea type="text" class="form-control"></textarea>
         </div>
       </div>
-      <button type="button" class="btn-submit">입력</button>
+      <button type="button" class="btn-submit" id="btn-submit">입력</button>
     </div>
     <!-- 저하고 지훈님 -->
     <div class="guestbook">
@@ -668,5 +661,4 @@
     </div>
   </div>
 </body>
-
 </html>
