@@ -71,63 +71,52 @@
       font-weight: bold;
     }
 
+    /* -------------- */
     .profile {
-      height: 600px;
-      margin: 30px 0px 30px 0px;
+      height: 500px;
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
     }
 
-
     .card {
+      height: 400px;
+      border-radius: 10px;
+      padding : 3px 3px 3px 3px;
       margin-left: 80px;
       box-shadow: 1px 1px 5px 1px gray;
-      background-color: white;
+      background-color: white; 
     }
-
-    .list-group,
-    .list-group>li {
+    
+    .card-img-top {
+      border-radius: 10px;
+      height: 350px;
       background-color: white;
-    }
-
-
-    .card>img {
       object-fit: cover;
     }
 
-    .card-img-top {
-      height: 230px;
-      background-color: white;
-    }
-
-    .card-title {
-      font-size: 22px;
-      font-weight: 700;
-      margin: -5px 0px -5px 0px;
-    }
-
-    .card-body,
-    .list-group>li {
-      font-weight: 550;
+    .card-body{
+      width : 100%;
+      height: 50PX;
       display: flex;
-      flex-direction: row;
       align-items: center;
       justify-content: center;
     }
 
-    .card-link {
-      margin: -10px 0px -10px 0px;
+    .card-title {
+      font-size: 23px;
+      font-weight: 700;
     }
+
+
+     #cardlink2{
+      color: black;
+      text-decoration-line: none;
+     }
 
     /* ================================================================= */
     /* 민수님 */
-    .sizing {
-      width: 80%;
-      background-color: green;
-      margin: 0px auto 0px auto;
-    }
 
 
 
@@ -362,7 +351,10 @@
     }
 
     /* ================================================================= */
-    .EntireGuestBook {
+    .EntireGuestBook {}
+
+
+    .CommentField {
       width: 80%;
       margin: 0 auto 0 auto;
     }
@@ -439,9 +431,8 @@
     }
   </style>
 
-  <script type="module">
-    // 나린님, 민준님
-    function zoomIn(event) {
+<script>
+     function zoomIn(event) {
       event.target.style.transform = "scale(1.07)"; //1.2배 확대
       event.target.style.zIndex = 1;
       event.target.style.transition = "all 0.5s"; // 속도
@@ -452,6 +443,10 @@
       event.target.style.zIndex = 0;
       event.target.style.transition = "all 0.3s";
     }
+</script>
+
+  <script type="module">
+    // 나린님, 민준님
     /* ================================================================= */
     // 민수님
     /* ================================================================= */
@@ -486,124 +481,103 @@
       </div>
     </div>
   </div>
+
   <div>
     <div class="profile">
+
       <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+       <a href="JYJ.html" class="card-link" id="cardlink2">
         <img src="PhotoJYJ.png" class="card-img-top" />
         <div class="card-body">
-          <h5 class="card-title">정윤제(리더)</h5>
+          <h5 class="card-title">정윤제(리더)</h5>         
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Blood type : A</li>
-          <li class="list-group-item">MBTI : ENTJ</li>
-          <li class="list-group-item">Blog :&nbsp;<a href="https://velog.io/@tmdwns_as/posts" target="_blank">link</a>
-          </li>
-        </ul>
-        <div class="card-body">
-          <a href="JYJ.html" class="card-link">상세정보</a>
-        </div>
+       </a>
       </div>
+
       <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
-        <img src="img/profile.jpg" class="card-img-top" alt="..." />
+       <a href="cms_profile.html" class="card-link" id="cardlink2">
+        <img src="img/profile.jpg" class="card-img-top" />
         <div class="card-body">
           <h5 class="card-title">조민수</h5>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Blood type : A</li>
-          <li class="list-group-item">MBTI : ENFP</li>
-          <li class="list-group-item">Blog :&nbsp;<a href="https://minsoocho.tistory.com/" target="_blank">link</a></li>
-        </ul>
-        <div class="card-body">
-          <a href="cms_profile.html" class="card-link">상세정보</a>
-        </div>
+       </a>
       </div>
+
       <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
-        <img src="nl_image.jpg" class="card-img-top" alt="..." />
+       <a href="knl.html" class="card-link" id="cardlink2">
+        <img src="nl_image.jpg" class="card-img-top" />
         <div class="card-body">
           <h5 class="card-title">김나린</h5>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Blood type : A</li>
-          <li class="list-group-item">MBTI : ISTP</li>
-          <li class="list-group-item">Blog :&nbsp;<a href="https://nalyn87.tistory.com/" target="_blank">link</a></li>
-        </ul>
-        <div class="card-body">
-          <a href="knl.html" class="card-link">상세정보</a>
-        </div>
+       </a>
       </div>
-      <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
-        <img src="mj_image.jpg" class="card-img-top" alt="..." />
+
+       <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+        <a href="LMJ.html" class="card-link" id="cardlink2">
+        <img src="mj_image.jpg" class="card-img-top" />
+         <div class="card-body">
+          <h5 class="card-title">이민준</h5>          
+         </div>
+        </a>
+       </div>
+      
+       <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)"  onmouseleave="zoomOut(event)">
+       <a href="LJH.html" class="card-link" id="cardlink2">
+        <img src="LJHPHOTOFINAL.jpg" class="card-img-top" />
         <div class="card-body">
-          <h5 class="card-title">이민준</h5>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Blood type : O</li>
-          <li class="list-group-item">MBTI : ISTJ</li>
-          <li class="list-group-item">Blog :&nbsp;<a href="https://velog.io/@minjun0702/posts" target="_blank">link</a>
-          </li>
-        </ul>
-        <div class="card-body">
-          <a href="LMJ.html" class="card-link">상세정보</a>
-        </div>
+          <h5 class="card-title">이지훈</h5>          
+         </div>
+       </a>
       </div>
-      <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
-        <img src="LJHPHOTOFINAL.jpg" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">이지훈</h5>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Blood type : A</li>
-          <li class="list-group-item">MBTI : INTP</li>
-          <li class="list-group-item">Blog :&nbsp;<a href="https://piggytiger.tistory.com/" target="_blank">link</a>
-          </li>
-        </ul>
-        <div class="card-body">
-          <a href="LJH.html" class="card-link">상세정보</a>
-        </div>
-      </div>
+
     </div>
   </div>
-
   <!-- ================================================================= -->
-  <div class="sizing">
-    <div class="slidebox" id="pjt01">
-      <input type="radio" name="slide" id="slide01" checked>
-      <input type="radio" name="slide" id="slide02">
-      <input type="radio" name="slide" id="slide03">
-      <input type="radio" name="slide" id="slide04">
-      <ul class="slidelist">
-        <li class="slideitem">
-          <div>
-            <label for="slide04" class="left"></label>
-            <label for="slide02" class="right"></label>
-            <img src="img/profile.jpg">
+  <div class="container-md" id="pjt01">
+    <div id="content" class="row">
+      <div id="left_section" class="col text center">
+        <div>
+          <div class="slidebox">
+            <input type="radio" name="slide" id="slide01" checked>
+            <input type="radio" name="slide" id="slide02">
+            <input type="radio" name="slide" id="slide03">
+            <input type="radio" name="slide" id="slide04">
+            <ul class="slidelist">
+              <li class="slideitem">
+                <div>
+                  <label for="slide04" class="left"></label>
+                  <label for="slide02" class="right"></label>
+                  <img src="img/profile.jpg">
+                </div>
+              </li>
+              <li class="slideitem">
+                <div>
+                  <label for="slide01" class="left"></label>
+                  <label for="slide03" class="right"></label>
+                  <img src="img/test2.jpg">
+                </div>
+              </li>
+              <li class="slideitem">
+                <div>
+                  <label for="slide02" class="left"></label>
+                  <label for="slide04" class="right"></label>
+                  <img src="img/profile.jpg">
+                </div>
+              </li>
+              <li class="slideitem">
+                <div>
+                  <label for="slide03" class="left"></label>
+                  <label for="slide01" class="right"></label>
+                  <img src="img/profile.jpg">
+              </li>
+            </ul>
           </div>
-        </li>
-        <li class="slideitem">
-          <div>
-            <label for="slide01" class="left"></label>
-            <label for="slide03" class="right"></label>
-            <img src="img/test2.jpg">
-          </div>
-        </li>
-        <li class="slideitem">
-          <div>
-            <label for="slide02" class="left"></label>
-            <label for="slide04" class="right"></label>
-            <img src="img/profile.jpg">
-          </div>
-        </li>
-        <li class="slideitem">
-          <div>
-            <label for="slide03" class="left"></label>
-            <label for="slide01" class="right"></label>
-            <img src="img/profile.jpg">
-        </li>
-      </ul>
-    </div>
-    <div>
-      <h3>프로젝트명</h3>
-      <p> 프로젝트내용</p>
+        </div>
+      </div><!--left_section.끝나는태그-->
+      <div id="right_section class" class="col">
+        <h3>프로젝트명</h3>
+        <p> 프로젝트내용</p>
+      </div>
     </div>
   </div>
   <!-- ================================================================= -->
