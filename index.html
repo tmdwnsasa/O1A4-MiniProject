@@ -7,7 +7,69 @@
   <title>test</title>
 
   <style>
-    /* 나린님, 민준님 */
+    body {
+      background-image: url("https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+      background-size: cover;
+    }
+/* 
+    .mymain {
+      width: 80%;
+      margin: 0 auto 0 auto
+    } */
+
+
+    .mytitle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      background-color: green;
+      background-size: cover;
+
+      height: 150px;
+
+      font-size: 30pt;
+    }
+
+    .mainimg {
+      height: 500px;
+    }
+
+    .myhome {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.pexels.com/photos/633520/pexels-photo-633520.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+      background-size: cover;
+      background-position: center 900px;
+
+      margin: 30px;
+
+      color: white;
+
+      position: relative;
+    }
+
+    #teamint {
+      position: absolute;
+      left: 70px;
+    }
+
+    #pjtint {
+      position: absolute;
+      right: 160px;
+    }
+
+    .myhome>p>span {
+      font-size: 20pt;
+      font-weight: bold;
+    }
+
+
+
     /* ================================================================= */
     /* 민수님 */
     /* ================================================================= */
@@ -24,7 +86,27 @@
 </head>
 
 <body>
-  <!-- 나린님, 민준님 -->
+  <div class="mymain">
+    <div class="mytitle">
+      <h1>O1A4</h1>
+    </div>
+    <div class="myhome">
+      <div id="teamint">
+        <span>안녕하세요 O1A4입니다</span><br>
+        팀소개글팀소개글팀소개글팀소개글팀소개글<br>
+        팀소개글팀소개글팀소개글팀소개글팀소개글<br>
+        팀소개글팀소개글팀소개글팀소개글팀소개글<br>
+        팀소개글팀소개글팀소개글팀소개글팀소개글<br>
+      </div>
+      <img class="mainimg"
+        src="https://images.pexels.com/photos/1424536/pexels-photo-1424536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+      <p id="pjtint">
+        <span>프로젝트 이름</span><br>
+        어떤 프로젝트인지 간단하게 설명하는 글
+      </p>
+    </div>
+  </div>
+
   <!-- ================================================================= -->
   <!-- 민수님 -->
   <!-- ================================================================= -->
