@@ -12,6 +12,7 @@
     />
 
     <style>
+      /* 나린님, 민준님 */
       /* width : 80%
       margin : 0 auto 0 auto; */
 
@@ -65,10 +66,86 @@
       /* ================================================================= */
       /* 민수님 */
       /* ================================================================= */
+      .EntireGuestBook {
+      }
+
+      .CommentField {
+        width: 80%;
+        height: 200px;
+        background-color: #fafafa;
+        border-top: 1px solid #e8e8e8;
+        border-bottom: 1px solid #e8e8e8;
+        margin: 0 auto 0 auto;
+        padding: 20px 20px 20px 20px;
+      }
+
+      .form-floating-name {
+        width: 200px;
+        border: 1px solid #e8e8e8;
+        border-radius: 7px;
+        margin-bottom: 10px;
+      }
+
+      .form-floating-comment {
+        border: 1px solid #e8e8e8;
+        border-radius: 7px;
+        margin-bottom: 10px;
+      }
+
+      .form-control {
+        height: 50px;
+      }
+
+      .label4comment {
+        color: color(105, 105, 105);
+      }
+
+      .btn-submit {
+        width: 60px;
+        border: none;
+        border-radius: 25px;
+        background-color: #8cbcc4;
+        color: white;
+        padding: 5px 5px 5px 5px;
+        float: right;
+      }
+
       /* 저하고 지훈님 */
+      .guestbook {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        margin: 0 auto 0 auto;
+        padding-left: 30px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #d6d6d6;
+      }
+
+      .username {
+        margin-bottom: 10px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        font-size: larger;
+      }
+
+      .comment {
+        color: #666666;
+        margin-bottom: 10px;
+        padding-left: 10px;
+      }
+
+      .date {
+        color: #666666;
+        font-size: smaller;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding-left: 10px;
+      }
     </style>
 
-    <script>
+    <script type="module">
+      // 나린님, 민준님
       function zoomIn(event) {
         event.target.style.transform = "scale(1.07)"; //1.2배 확대
         event.target.style.zIndex = 1;
@@ -83,11 +160,11 @@
       /* ================================================================= */
       // 민수님
       /* ================================================================= */
-      // 저하고 지훈님
     </script>
   </head>
 
   <body>
+    <!-- 나린님, 민준님 -->
     <div>
       <div class="profile">
         <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
@@ -162,10 +239,53 @@
         </div>
       </div>
     </div>
-
     <!-- ================================================================= -->
     <!-- 민수님 -->
     <!-- ================================================================= -->
-    <!-- 저하고 지훈님 -->
+    <div class="EntireGuestBook">
+      <div class="CommentField">
+        <div class="form-floating-name">
+          <div class="form-floating name">
+            <input type="text" class="form-control" id="floatingInputGroup2" placeholder="Username" />
+            <label style="color: #d6d6d6" for="floatingInputGroup2">이름</label>
+          </div>
+        </div>
+        <div class="form-floating-comment">
+          <div class="form-floating name">
+            <textarea type="text" class="form-control"></textarea>
+          </div>
+        </div>
+        <button type="button" class="btn-submit">입력</button>
+      </div>
+      <!-- 저하고 지훈님 -->
+      <div class="guestbook">
+        <div class="username">
+          <strong>user name</strong>
+        </div>
+        <div class="comment">방명록내용</div>
+        <div class="date">날짜</div>
+      </div>
+      <div class="guestbook">
+        <div class="username">
+          <strong>user name</strong>
+        </div>
+        <div class="comment">방명록내용</div>
+        <div class="date">날짜</div>
+      </div>
+      <div class="guestbook">
+        <div class="username">
+          <strong>user name</strong>
+        </div>
+        <div class="comment">방명록내용</div>
+        <div class="date">날짜</div>
+      </div>
+      <div class="guestbook">
+        <div class="username">
+          <strong>user name</strong>
+        </div>
+        <div class="comment">방명록내용</div>
+        <div class="date">날짜</div>
+      </div>
+    </div>
   </body>
 </html>
