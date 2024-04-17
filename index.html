@@ -13,9 +13,12 @@
     /* ================================================================= */
     /* 민수님 */
     /* ================================================================= */
+    .EntireGuestBook {
+    }
 
     .CommentField {
       width: 80%;
+      height: 200px;
       background-color: #FAFAFA;
       border-top: 1px solid #E8E8E8;
       border-bottom: 1px solid #E8E8E8;
@@ -24,9 +27,9 @@
     }
 
     .form-floating-name {
+      width: 200px;
       border: 1px solid #E8E8E8;
       border-radius: 7px;
-      width: 200px;
       margin-bottom: 10px;
     }
 
@@ -51,7 +54,7 @@
       background-color: #8CBCC4;
       color: white;
       padding: 5px 5px 5px 5px;
-      margin-left: 700px;
+      float: right;
     }
 
     /* 저하고 지훈님 */
@@ -102,20 +105,21 @@
   <!-- ================================================================= -->
   <!-- 민수님 -->
   <!-- ================================================================= -->
-  <div class="CommentField">
-    <div class="form-floating-name">
-      <div class="form-floating name">
-        <input type="text" class="form-control" id="floatingInputGroup2" placeholder="Username">
-        <label style="color:#D6D6D6" for="floatingInputGroup2">이름</label>
+  <div class="EntireGuestBook">
+    <div class="CommentField">
+      <div class="form-floating-name">
+        <div class="form-floating name">
+          <input type="text" class="form-control" id="floatingInputGroup2" placeholder="Username">
+          <label style="color:#D6D6D6" for="floatingInputGroup2">이름</label>
+        </div>
       </div>
-    </div>
-    <div class="form-floating-comment">
-      <div class="form-floating name">
-        <textarea type="text" class="form-control"></textarea>
+      <div class="form-floating-comment">
+        <div class="form-floating name">
+          <textarea type="text" class="form-control"></textarea>
+        </div>
       </div>
+      <button type="button" class="btn-submit">입력</button>
     </div>
-    <button type="button" class="btn-submit">입력</button>
-  </div>
     <!-- 저하고 지훈님 -->
     <div class="guestbook">
       <div class="username">
@@ -161,6 +165,7 @@
         날짜
       </div>
     </div>
+  </div>
 </body>
 
 </html>
