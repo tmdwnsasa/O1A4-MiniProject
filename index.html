@@ -128,9 +128,8 @@
     /* ================================================================= */
     /* 민수님 */
 
-    .sizing {
+    .container-md {
       width: 80%;
-      background-color: green;
       margin: 0px auto 0px auto;
     }
 
@@ -370,6 +369,7 @@
     /* ================================================================= */
     .EntireGuestBook {}
 
+
     .CommentField {
       width: 80%;
       height: 200px;
@@ -574,45 +574,51 @@
   </div>
 
   <!-- ================================================================= -->
-  <div class="sizing">
-    <div class="slidebox">
-      <input type="radio" name="slide" id="slide01" checked>
-      <input type="radio" name="slide" id="slide02">
-      <input type="radio" name="slide" id="slide03">
-      <input type="radio" name="slide" id="slide04">
-      <ul class="slidelist">
-        <li class="slideitem">
-          <div>
-            <label for="slide04" class="left"></label>
-            <label for="slide02" class="right"></label>
-            <img src="img/profile.jpg">
+  <div class="container-md">
+    <div id="content" class="row">
+      <div id="left_section" class="col text center">
+        <div>
+          <div class="slidebox">
+            <input type="radio" name="slide" id="slide01" checked>
+            <input type="radio" name="slide" id="slide02">
+            <input type="radio" name="slide" id="slide03">
+            <input type="radio" name="slide" id="slide04">
+            <ul class="slidelist">
+              <li class="slideitem">
+                <div>
+                  <label for="slide04" class="left"></label>
+                  <label for="slide02" class="right"></label>
+                  <img src="img/profile.jpg">
+                </div>
+              </li>
+              <li class="slideitem">
+                <div>
+                  <label for="slide01" class="left"></label>
+                  <label for="slide03" class="right"></label>
+                  <img src="img/test2.jpg">
+                </div>
+              </li>
+              <li class="slideitem">
+                <div>
+                  <label for="slide02" class="left"></label>
+                  <label for="slide04" class="right"></label>
+                  <img src="img/profile.jpg">
+                </div>
+              </li>
+              <li class="slideitem">
+                <div>
+                  <label for="slide03" class="left"></label>
+                  <label for="slide01" class="right"></label>
+                  <img src="img/profile.jpg">
+              </li>
+            </ul>
           </div>
-        </li>
-        <li class="slideitem">
-          <div>
-            <label for="slide01" class="left"></label>
-            <label for="slide03" class="right"></label>
-            <img src="img/test2.jpg">
-          </div>
-        </li>
-        <li class="slideitem">
-          <div>
-            <label for="slide02" class="left"></label>
-            <label for="slide04" class="right"></label>
-            <img src="img/profile.jpg">
-          </div>
-        </li>
-        <li class="slideitem">
-          <div>
-            <label for="slide03" class="left"></label>
-            <label for="slide01" class="right"></label>
-            <img src="img/profile.jpg">
-        </li>
-      </ul>
-    </div>
-    <div>
-      <h3>프로젝트명</h3>
-      <p> 프로젝트내용</p>
+        </div>
+      </div><!--left_section.끝나는태그-->
+      <div id="right_section class" class="col">
+        <h3>프로젝트명</h3>
+        <p> 프로젝트내용</p>
+      </div>
     </div>
   </div>
   <!-- ================================================================= -->
