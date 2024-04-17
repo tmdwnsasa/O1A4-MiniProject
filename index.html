@@ -5,11 +5,256 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>test</title>
-
+  <!-- 슬라이더 플러그인의 JavaScript 파일을 로드합니다. -->
+  <script src=""></script>
   <style>
     /* 나린님, 민준님 */
     /* ================================================================= */
     /* 민수님 */
+
+    .sizing {
+      width: 80%;
+      background-color: green;
+      margin: 0px auto 0px auto;
+    }
+
+      {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ul,
+    li {
+      list-style: none;
+    }
+
+    [name="slide"] {
+      display: none;
+    }
+
+    .slidebox {
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .slidebox img {
+      max-width: 100%;
+    }
+
+    .slidebox .slidelist {
+      white-space: nowrap;
+      font-size: 0;
+      overflow: hidden;
+    }
+
+    .slidebox .slideitem {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      width: 100%;
+      transition: all .35s;
+    }
+
+    .slidebox .slideitem label {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    label.left {
+      left: 20px;
+      background-color: #5f5f5f;
+      background-image: url('./img/left-arrow.png');
+      background-position: center center;
+      background-size: 50%;
+      background-repeat: no-repeat;
+    }
+
+    label.right {
+      right: 20px;
+      background-color: #5f5f5f;
+      background-image: url('./img/right-arrow.png');
+      background-position: center center;
+      background-size: 50%;
+      background-repeat: no-repeat;
+    }
+
+    [id="slide01"]:checked~.slidelist .slideitem {
+      transform: translateX(0);
+      animation: slide01 20s infinite;
+    }
+
+    [id="slide02"]:checked~.slidelist .slideitem {
+      transform: translateX(-100%);
+    }
+
+    [id="slide03"]:checked~.slidelist .slideitem {
+      transform: translateX(-200%);
+    }
+
+    [id="slide04"]:checked~.slidelist .slideitem {
+      transform: translateX(-300%);
+    }
+
+    @keyframes slide01 {
+      0% {
+        left: 0%;
+      }
+
+      23% {
+        left: 0%;
+      }
+
+      25% {
+        left: -100%;
+      }
+
+      48% {
+        left: -100%;
+      }
+
+      50% {
+        left: -200%;
+      }
+
+      73% {
+        left: -200%;
+      }
+
+      75% {
+        left: 100%;
+      }
+
+      98% {
+        left: 100%;
+      }
+
+      100% {
+        left: 0%;
+      }
+    }
+
+    @keyframes slide02 {
+      0% {
+        left: 0%;
+      }
+
+      23% {
+        left: 0%;
+      }
+
+      25% {
+        left: -100%;
+      }
+
+      48% {
+        left: -100%;
+      }
+
+      50% {
+        left: -200%;
+      }
+
+      73% {
+        left: -200%;
+      }
+
+      75% {
+        left: -300%;
+      }
+
+      98% {
+        left: -300%;
+      }
+
+      100% {
+        left: 0%;
+      }
+    }
+
+    @keyframes slide03 {
+      0% {
+        left: 0%;
+      }
+
+      23% {
+        left: 0%;
+      }
+
+      25% {
+        left: -100%;
+      }
+
+      48% {
+        left: -100%;
+      }
+
+      50% {
+        left: 200%;
+      }
+
+      73% {
+        left: 200%;
+      }
+
+      75% {
+        left: 100%;
+      }
+
+      98% {
+        left: 100%;
+      }
+
+      100% {
+        left: 0%;
+      }
+    }
+
+    @keyframes slide04 {
+      0% {
+        left: 0%;
+      }
+
+      23% {
+        left: 0%;
+      }
+
+      25% {
+        left: 300%;
+      }
+
+      48% {
+        left: 300%;
+      }
+
+      50% {
+        left: 200%;
+      }
+
+      73% {
+        left: 200%;
+      }
+
+      75% {
+        left: 100%;
+      }
+
+      98% {
+        left: 100%;
+      }
+
+      100% {
+        left: 0%;
+      }
+    }
+
+
     /* ================================================================= */
     /* 저하고 지훈님 */
   </style>
@@ -26,8 +271,50 @@
 <body>
   <!-- 나린님, 민준님 -->
   <!-- ================================================================= -->
-  <!-- 민수님 -->
-  <!-- ================================================================= -->
+  <div class="sizing">
+    <div class="slidebox">
+      <input type="radio" name="slide" id="slide01" checked>
+      <input type="radio" name="slide" id="slide02">
+      <input type="radio" name="slide" id="slide03">
+      <input type="radio" name="slide" id="slide04">
+      <ul class="slidelist">
+        <li class="slideitem">
+          <div>
+            <label for="slide04" class="left"></label>
+            <label for="slide02" class="right"></label>
+            <img src="img/profile.jpg">
+          </div>
+        </li>
+        <li class="slideitem">
+          <div>
+            <label for="slide01" class="left"></label>
+            <label for="slide03" class="right"></label>
+            <img src="img/test2.jpg">
+          </div>
+        </li>
+        <li class="slideitem">
+          <div>
+            <label for="slide02" class="left"></label>
+            <label for="slide04" class="right"></label>
+            <img src="img/profile.jpg">
+          </div>
+        </li>
+        <li class="slideitem">
+          <div>
+            <label for="slide03" class="left"></label>
+            <label for="slide01" class="right"></label>
+            <img src="img/profile.jpg">
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3>프로젝트명</h3>
+        <p> 프로젝트내용</p>
+    </div>
+  </div>
+
+
+  <!-- ================================================================= -->>
   <!-- 저하고 지훈님 -->
 </body>
 
