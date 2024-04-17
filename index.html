@@ -356,12 +356,14 @@
     }
 </script>
   <script type="module">
+    
     // Firebase SDK 라이브러리 가져오기
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
     import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
     import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
     import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-
+    import { query } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { orderBy } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
     // Firebase 구성 정보 설정
     const firebaseConfig = {
@@ -392,7 +394,6 @@
 
     // 날짜와 시간을 문자열로 포맷팅
     const formattedDate = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')} ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-    console.log(formattedDate);
     $("#btn-submit").click(async function () {
       let username = $('#username').val();
       let comment = $('#comment').val();
@@ -413,7 +414,10 @@
       alert('저장완료!');
       window.location.reload();
     })
-    let docs = await getDocs(collection(db, "MiniProject"));
+
+    const items = query(collection(db,"MiniProject"), orderBy("date", "desc"))
+    let docs = await getDocs(items);
+
     docs.forEach((doc) => {
       let row = doc.data();
       let username = row['username'];
