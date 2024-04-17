@@ -14,8 +14,8 @@
       margin : 0 auto 0 auto; */
 
     body {
-      background-image: url("https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-      background-size: cover;
+      background-image: url("https://img.freepik.com/free-vector/neon-geometric-border-dark-purple-background-vector_53876-170450.jpg?t=st=1713337697~exp=1713341297~hmac=22f84489ea098215178fc77ccbaee76790e7d761d42c51e86cb350d147e04076&w=740");
+      background-size:cover;
     }
 
     /* 
@@ -35,8 +35,6 @@
       background-size: cover;
 
       height: 150px;
-
-      font-size: 30pt;
     }
 
     .mainimg {
@@ -56,21 +54,19 @@
       margin: 30px;
 
       color: white;
-
-      position: relative;
     }
 
     #teamint {
-      position: absolute;
-      left: 70px;
+      margin-left: 50px;
+      margin-right: auto;
     }
 
     #pjtint {
-      position: absolute;
-      right: 160px;
+      margin-left: 50px;
+      margin-right: auto;
     }
 
-    .myhome>p>span {
+    .myhome>div>span {
       font-size: 20pt;
       font-weight: bold;
     }
@@ -464,7 +460,7 @@
       let username = $('#username').val();
       let comment = $('#comment').val();
       let date = $('#date').val();
-
+    })
   </script>
 </head>
 
@@ -472,7 +468,7 @@
 
   <div class="mymain">
     <div class="mytitle">
-      <h1>O1A4</h1>
+      <h1 style="font-size: 50px">O1A4</h1>
     </div>
     <div class="myhome">
       <div id="teamint">
@@ -484,10 +480,10 @@
       </div>
       <img class="mainimg"
         src="https://images.pexels.com/photos/1424536/pexels-photo-1424536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
-      <p id="pjtint">
-        <span>프로젝트 이름</span><br>
+      <div id="pjtint">
+        <span><a href="#pjt01" style="color:white">프로젝트 이름<br></a></span>
         어떤 프로젝트인지 간단하게 설명하는 글
-      </p>
+      </div>
     </div>
   </div>
   <div>
@@ -570,7 +566,7 @@
 
   <!-- ================================================================= -->
   <div class="sizing">
-    <div class="slidebox">
+    <div class="slidebox" id="pjt01">
       <input type="radio" name="slide" id="slide01" checked>
       <input type="radio" name="slide" id="slide02">
       <input type="radio" name="slide" id="slide03">
@@ -657,4 +653,5 @@
     </div>
   </div>
 </body>
+
 </html>
