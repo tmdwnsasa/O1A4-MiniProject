@@ -118,167 +118,60 @@
 
     /* ================================================================= */
     /* 민수님 */
-
-
-
-    ul,
-    li {
-      list-style: none;
+    .container-md {
+      width: 80%;
+      height: 500px;
     }
 
-    [name="slide"] {
-      display: none;
-    }
-
-    .slidebox {
+    .slideshow-container {
       max-width: 500px;
       width: 100%;
+      height: 350px;
       margin: 0 auto;
     }
 
-    .slidebox img {
-      max-width: 100%;
+    .Slidesbackground {
+      margin: 0;
+      padding: 0;
     }
 
-    .slidebox .slidelist {
-      padding-left: 0;
-      white-space: nowrap;
-      font-size: 0;
+    .mySlides {
+      border-radius: 3%;
+      width: 100%;
+      height: 350px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .slideshow-image {
+      border-radius: 3%;
+      width: 100%;
+      height: 100%;
       overflow: hidden;
     }
 
-    .slidebox .slideitem {
-      position: relative;
-      display: inline-block;
-      vertical-align: middle;
-      width: 100%;
-      transition: all .35s;
+    .fade {
+      animation-name: fade;
+      animation-duration: 4s;
     }
 
-    .slidebox .slideitem label {
-      position: absolute;
-      z-index: 1;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 20px;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    label.left {
-      left: 20px;
-      background-color: #5f5f5f;
-      background-image: url('./img/left-arrow.png');
-      background-position: center center;
-      background-size: 50%;
-      background-repeat: no-repeat;
-    }
-
-    label.right {
-      right: 20px;
-      background-color: #5f5f5f;
-      background-image: url('./img/right-arrow.png');
-      background-position: center center;
-      background-size: 50%;
-      background-repeat: no-repeat;
-    }
-
-    [id="slide01"]:checked~.slidelist .slideitem {
-      transform: translateX(0);
-      animation: slide01 20s infinite;
-    }
-
-    [id="slide02"]:checked~.slidelist .slideitem {
-      transform: translateX(-100%);
-    }
-
-    [id="slide03"]:checked~.slidelist .slideitem {
-      transform: translateX(-200%);
-    }
-
-    [id="slide04"]:checked~.slidelist .slideitem {
-      transform: translateX(-300%);
-    }
-
-    @keyframes slide01 {
-
-      0%,
+    @keyframes fade {
+      0% {
+        opacity: 0;
+      }
+      25%{
+        opacity: 1;
+      }
+      75%{
+        opacity: 1;
+      }
       100% {
-        left: 0%;
-      }
-
-      25% {
-        left: -100%;
-      }
-
-      50% {
-        left: -200%;
-      }
-
-      75% {
-        left: -300%;
+        opacity: 0;
       }
     }
 
-    @keyframes slide02 {
-
-      0%,
-      100% {
-        left: 100%;
-      }
-
-      25% {
-        left: 0%;
-      }
-
-      50% {
-        left: -100%;
-      }
-
-      75% {
-        left: -200%;
-      }
-    }
-
-    @keyframes slide03 {
-
-      0%,
-      100% {
-        left: 200%;
-      }
-
-      25% {
-        left: 100%;
-      }
-
-      50% {
-        left: 0%;
-      }
-
-      75% {
-        left: -100%;
-      }
-    }
-
-    @keyframes slide04 {
-
-      0%,
-      100% {
-        left: 300%;
-      }
-
-      25% {
-        left: 200%;
-      }
-
-      50% {
-        left: 100%;
-      }
-
-      75% {
-        left: 0%;
-      }
-    }
 
     /* ================================================================= */
     .EntireGuestBook {
@@ -377,6 +270,27 @@
       event.target.style.transform = "scale(1)";
       event.target.style.zIndex = 0;
       event.target.style.transition = "all 0.3s";
+    }
+
+    window.onload = function () {
+      slideIndex = -1;
+      let timer;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex >= slides.length) {
+          slideIndex = 0;
+        }
+        slides[slideIndex].style.display = "block";
+      }
+      timer = setInterval(showSlides, 4000); // 2초마다 이미지가 체인지됩니다
     }
   </script>
   <script type="module">
@@ -539,41 +453,28 @@
   <div class="container-md" id="pjt01">
     <div id="content" class="row">
       <div id="left_section" class="col text center">
-        <div>
-          <div class="slidebox">
-            <input type="radio" name="slide" id="slide01" checked>
-            <input type="radio" name="slide" id="slide02">
-            <input type="radio" name="slide" id="slide03">
-            <input type="radio" name="slide" id="slide04">
-            <ul class="slidelist">
-              <li class="slideitem">
-                <div>
-                  <label for="slide04" class="left"></label>
-                  <label for="slide02" class="right"></label>
-                  <img src="img/profile.jpg">
-                </div>
-              </li>
-              <li class="slideitem">
-                <div>
-                  <label for="slide01" class="left"></label>
-                  <label for="slide03" class="right"></label>
-                  <img src="img/test3.png">
-                </div>
-              </li>
-              <li class="slideitem">
-                <div>
-                  <label for="slide02" class="left"></label>
-                  <label for="slide04" class="right"></label>
-                  <img src="img/profile.jpg">
-                </div>
-              </li>
-              <li class="slideitem">
-                <div>
-                  <label for="slide03" class="left"></label>
-                  <label for="slide01" class="right"></label>
-                  <img src="img/profile.jpg">
-              </li>
-            </ul>
+        <div class="slideshow-container">
+          <div class="Slidesbackground">
+            <div class="mySlides fade">
+              <img
+                src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2369&q=80"
+                class="slideshow-image">
+            </div>
+            <div class="mySlides fade">
+              <img
+                src="https://images.unsplash.com/photo-1581888227599-779811939961?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80"
+                class="slideshow-image">
+            </div>
+            <div class="mySlides fade">
+              <img
+                src="https://images.unsplash.com/photo-1534361960057-19889db9621e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
+                class="slideshow-image">
+            </div>
+            <div class="mySlides fade">
+              <img
+                src="https://images.unsplash.com/photo-1527526029430-319f10814151?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
+                class="slideshow-image">
+            </div>
           </div>
         </div>
       </div><!--left_section.끝나는태그-->
