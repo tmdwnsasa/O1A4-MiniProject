@@ -21,7 +21,7 @@
 
         body {
             /* background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20200804/pngtree-blue-and-purple-gradient-background-image_377128.jpg'); */
-            */ background-size: cover;
+            background-size: cover;
         }
 
         .whole {
@@ -51,7 +51,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: center;    
             margin-top: 5px;
 
             padding-top: 5px;
@@ -130,7 +130,7 @@
                 context.drawImage(img, 0, 0, 2560, 1200);
             }
             img.src = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAL0AygMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAAAAQMGAv/EABUQAQEAAAAAAAAAAAAAAAAAAAAB/8QAGAEBAQEBAQAAAAAAAAAAAAAAAgABAwb/xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAMAwEAAhEDEQA/AOpBK9C9FaUBoWhQqc7UAqC0qAgtAK0LSoCC0AqC0qA0LQBBaFKjQtEpRBaAINbUKA9FaFCoLUAQWhSogtAK0LSoCC1UgVBaVAaFoAnO0KVGhaAlQWlAQWgCDWwFB6K0qAgtClRBaANC0KVEFoBUFpUBoWgCC0ArQtKglQWlAQWgJUFpQGhreoDm9FaFKiC0AaFoUqILQBBaVFqNC0ATnaAVBaVBK0LSgILQEqC0oDQtAEGtilRzeitAGhaFCoLUAqC0Kg0LQBBaAILSotRoWiUogtAEFolKNC0BKgtKAg1vUBzeitClRoWgCC0KVGhaAILQBOdoUqNC0SlEFoAgtEpRoWgJUFpQEFoFRBrcCg9FaVAQWgVGhatEEFpAEFoUqNC0SlEFoAgtBKILQBoWpQogtAKgtKgNc7W5So5vR2gCC0qLUaFoAnO0KVGhaAlQWlAQWiVUqC0AaFolKILQCoLSoCC0AaGtgK5vRWlQGhaAILQCtC0qCVBaUBBaAlQWlAaFolKILQCoLSoCC0ArXO0qAg1vUWgPR2oEEFoBU52leVStC0oCC0BKgtKA0LQEqC0oCC0KVEFoBWhaVAQWgDQ1sA5vRWgFQWlQGhaJSiC0AQWpQo0LQEqC0oCC0KVEFoA0LQpUTnaAVoWlQEGtwHN6K0KVGhaJVRBaAILUoUQWgJWhaUBBaFKiC0AaFoUqILQCtC0qAgtAqINf/9k=';
-
+            
             let page = document.getElementById('not_canvas');
 
             page.addEventListener('mousemove', (event) => {
@@ -147,12 +147,13 @@
                     transform: `translate(${backMoveX}px, ${backMoveY}px)`
                 });
 
-                const mouseX = event.clientX;
-                const mouseY = event.clientY;
+                const mouseX = event.pageX;
+                const mouseY = event.pageY;
 
                 const imageData = context.getImageData(mouseX, mouseY, 1, 1);
 
                 const data = imageData.data;
+                console.log(data);
                 const r = data[0];  // 빨
                 const g = data[1];  // 녹
                 const b = data[2];  // 파
@@ -160,10 +161,9 @@
 
                 const color = `rgba(${r}, ${g}, ${b}, ${a})`;
 
-                console.log("color");
-
                 const bar = document.querySelector('.upper_bar');
                 const bar2 = document.querySelector('body');
+                
                 // 배경색 지정
                 bar.style.background = color;
                 bar2.style.background = color;
