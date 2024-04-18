@@ -101,6 +101,11 @@
         flex-direction: row; /* row = 가로정렬 / column = 세로정렬 */
         justify-content: center; /* 상단 정렬 */
       }
+      
+      #indexlink {
+        color: black;
+        text-decoration-line: none;
+      }
     </style>
 
     <script>
@@ -173,7 +178,7 @@
     <div class="mybtn">
       <div class="btn-group" role="group" aria-label="Default button group">
         <button type="button" class="btn btn-outline-dark">이전 팀원</button>
-        <button type="button" class="btn btn-outline-dark">메인 페이지</button>
+        <button type="button" class="btn btn-outline-dark"><a id="indexlink" href="index.html">메인 페이지</a></button>
         <button type="button" class="btn btn-outline-dark">다음 팀원</button>
       </div>
     </div>

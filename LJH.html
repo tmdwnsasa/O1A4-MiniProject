@@ -17,7 +17,6 @@
         .bg-inner {
             width: 100%;
             height: 100vh;
-            overflow: hidden;
         }
 
         .wrap {
@@ -51,11 +50,13 @@
             margin: 10px auto;
 
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
 
         .introducingbox {
+            width: 80%;
             margin: 50px auto 50px auto;
             display: flex;
             flex-direction: row;
@@ -137,6 +138,7 @@
     <div class="nomove">
         <div class="mytitle">
             <h2><strong>끝 없는 망망대해, 개발자의 길에 뛰어든 꿈만 많은 초짜선장.</strong></h2>
+            <button type="button" class="btn btn-outline-light" onclick="location.href='index.html'">뒤로가기</button>
         </div>
         <div class="introducingbox">
             <div class="mypicture"><img src="LJHPHOTOFINAL.jpg" width="350"><br>
