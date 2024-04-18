@@ -142,60 +142,70 @@
 
     /* ================================================================= */
     /* 민수님 */
+
     .emptyspace {
       height: 300px;
     }
 
-    .projectslide {
-      transform: scale(1.4);
+    .container-md {
+      width: 80%;
+      height: 350px;
+      padding: 0;
+      margin-bottom: 0;
+      align-content: center;
+      transform: scale(1.3);
     }
 
-    ul,
-    li {
-      list-style: none;
-    }
-
-    [name="slide"] {
-      display: none;
-    }
-
-    .slidebox {
+    .slideshow-container {
       max-width: 500px;
       width: 100%;
+      height: 350px;
       margin: 0 auto;
     }
 
-    .slidebox img {
-      max-width: 100%;
+    .Slidesbackground {
+      margin: 0;
+      padding: 0;
     }
 
-    .slidebox .slidelist {
-      padding-left: 0;
-      white-space: nowrap;
-      font-size: 0;
+    .mySlides {
+      border-radius: 3%;
+      width: 100%;
+      height: 350px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .slideshow-image {
+      border-radius: 3%;
+      width: 100%;
+      height: 100%;
       overflow: hidden;
 
       border-radius: 15px;
       box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
     }
 
-    .slidebox .slideitem {
-      height: 350px;
-      position: relative;
-      display: inline-block;
-      vertical-align: middle;
-      width: 100%;
-      transition: all .35s;
+    .fade {
+      animation-name: fade;
+      animation-duration: 4s;
     }
 
-    .slidebox .slideitem label {
-      position: absolute;
-      z-index: 1;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 20px;
-      border-radius: 50%;
-      cursor: pointer;
+    @keyframes fade {
+      0% {
+        opacity: 0;
+      }
+      25%{
+        opacity: 1;
+      }
+      75%{
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
     }
 
     label.left {
@@ -216,102 +226,6 @@
       background-repeat: no-repeat;
     }
 
-    [id="slide01"]:checked~.slidelist .slideitem {
-      transform: translateX(0);
-      /* animation: slide01 20s infinite; */
-    }
-
-    [id="slide02"]:checked~.slidelist .slideitem {
-      transform: translateX(-100%);
-    }
-
-    [id="slide03"]:checked~.slidelist .slideitem {
-      transform: translateX(-200%);
-    }
-
-    [id="slide04"]:checked~.slidelist .slideitem {
-      transform: translateX(-300%);
-    }
-
-    @keyframes slide01 {
-
-      0%,
-      100% {
-        left: 0%;
-      }
-
-      25% {
-        left: -100%;
-      }
-
-      50% {
-        left: -200%;
-      }
-
-      75% {
-        left: -300%;
-      }
-    }
-
-    @keyframes slide02 {
-
-      0%,
-      100% {
-        left: 100%;
-      }
-
-      25% {
-        left: 0%;
-      }
-
-      50% {
-        left: -100%;
-      }
-
-      75% {
-        left: -200%;
-      }
-    }
-
-    @keyframes slide03 {
-
-      0%,
-      100% {
-        left: 200%;
-      }
-
-      25% {
-        left: 100%;
-      }
-
-      50% {
-        left: 0%;
-      }
-
-      75% {
-        left: -100%;
-      }
-    }
-
-    @keyframes slide04 {
-
-      0%,
-      100% {
-        left: 300%;
-      }
-
-      25% {
-        left: 200%;
-      }
-
-      50% {
-        left: 100%;
-      }
-
-      75% {
-        left: 0%;
-      }
-    }
 
     .col {
       color: #4d3838;
@@ -429,6 +343,27 @@
       event.target.style.zIndex = 0;
       event.target.style.transition = "all 0.3s";
     }
+
+    window.onload = function () {
+      slideIndex = -1;
+      let timer;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex >= slides.length) {
+          slideIndex = 0;
+        }
+        slides[slideIndex].style.display = "block";
+      }
+      timer = setInterval(showSlides, 4000); // 2초마다 이미지가 체인지됩니다
+    }
   </script>
   <script type="module">
 
@@ -451,27 +386,28 @@
       measurementId: "G-14NW4Q7RYZ"
     };
 
-
     // Firebase 인스턴스 초기화
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-    // 현재 날짜와 시간을 가져오기
-    const currentDate = new Date();
-
-    // 각 구성 요소를 가져오기
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth() + 1;
-    const day = currentDate.getDate();
-    const hours = currentDate.getHours();
-    const minutes = currentDate.getMinutes();
-    const seconds = currentDate.getSeconds();
-
-    // 날짜와 시간을 문자열로 포맷팅
-    const formattedDate = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')} ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
     $("#btn-submit").click(async function () {
       let username = $('#username').val();
       let comment = $('#comment').val();
+
+      // 현재 날짜와 시간을 가져오기
+      const currentDate = new Date();
+
+      // 각 구성 요소를 가져오기
+      const year = currentDate.getFullYear();
+      const month = currentDate.getMonth() + 1;
+      const day = currentDate.getDate();
+      const hours = currentDate.getHours();
+      const minutes = currentDate.getMinutes();
+      const seconds = currentDate.getSeconds();
+
+      // 날짜와 시간을 문자열로 포맷팅
+      const formattedDate = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')} ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
       if (username == "") {
         alert('이름이 입력되지 않았습니다.');
         return 0;
@@ -593,57 +529,42 @@
 
   </div>
   <!-- ================================================================= -->
-  <div class="projectslide">
-    <div class="container-md" id="pjt">
-      <div id="content" class="row">
-        <div id="left_section" class="col text center">
-          <div>
-            <div class="slidebox">
-              <input type="radio" name="slide" id="slide01" checked>
-              <input type="radio" name="slide" id="slide02">
-              <input type="radio" name="slide" id="slide03">
-              <input type="radio" name="slide" id="slide04">
-              <ul class="slidelist">
-                <li class="slideitem">
-                  <div>
-                    <label for="slide04" class="left"></label>
-                    <label for="slide02" class="right"></label>
-                    <img src="미니프로젝트01.png">
-                  </div>
-                </li>
-                <li class="slideitem">
-                  <div>
-                    <label for="slide01" class="left"></label>
-                    <label for="slide03" class="right"></label>
-                    <img src="미니프로젝트02.png">
-                  </div>
-                </li>
-                <li class="slideitem">
-                  <div>
-                    <label for="slide02" class="left"></label>
-                    <label for="slide04" class="right"></label>
-                    <img src="img/profile.jpg">
-                  </div>
-                </li>
-                <li class="slideitem">
-                  <div>
-                    <label for="slide03" class="left"></label>
-                    <label for="slide01" class="right"></label>
-                    <img src="미니프로젝트04.png">
-                </li>
-              </ul>
+  <div class="container-md" id="pjt01">
+    <div id="content" class="row">
+      <div id="left_section" class="col text center">
+        <div class="slideshow-container">
+          <div class="Slidesbackground">
+            <div class="mySlides fade">
+              <img
+                src="미니프로젝트01.png"
+                class="slideshow-image">
+            </div>
+            <div class="mySlides fade">
+              <img
+                src="미니프로젝트02.png"
+                class="slideshow-image">
+            </div>
+            <div class="mySlides fade">
+              <img
+                src="미니프로젝트03.png"
+                class="slideshow-image">
+            </div>
+            <div class="mySlides fade">
+              <img
+                src="미니프로젝트04.png"
+                class="slideshow-image">
             </div>
           </div>
         </div><!--left_section.끝나는태그-->
-        <div id="right_section class" class="col">
-          <h3 class="col_title">미니 팀프로젝트</h3>
-          <p class="col_content">
-            1. 메인화면 - 단체사진과 글씨를 클릭하면 해당 스크롤로 이동하는 목차<br>
-            2. 개인 프로필 카드 - 카드 클릭 시 각자 제작한 개인 프로필 페이지로 이동<br>
-            3. 프로젝트 슬라이드 - 프로젝트에 대한 간략한 설명<br>
-            4. 방명록 - 페이지를 방문한 사람들의 방명록
-          </p>
-        </div>
+      </div>
+      <div id="right_section class" class="col">
+        <h3 class="col_title">미니 팀프로젝트</h3>
+        <p class="col_content">
+          1. 메인화면 - 단체사진과 글씨를 클릭하면 해당 스크롤로 이동하는 목차<br>
+          2. 개인 프로필 카드 - 카드 클릭 시 각자 제작한 개인 프로필 페이지로 이동<br>
+          3. 프로젝트 슬라이드 - 프로젝트에 대한 간략한 설명<br>
+          4. 방명록 - 페이지를 방문한 사람들의 방명록
+        </p>
       </div>
     </div>
   </div>
