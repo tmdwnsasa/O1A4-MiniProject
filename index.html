@@ -131,7 +131,7 @@
     }
 
     .slidebox {
-      max-width: 500px;
+      max-width: 400px;
       width: 100%;
       margin: 0 auto;
     }
@@ -141,9 +141,11 @@
     }
 
     .slidebox .slidelist {
+      padding: 0px 0px 0px 0px;
       white-space: nowrap;
       font-size: 0;
       overflow: hidden;
+      border-radius: 10px;
     }
 
     .slidebox .slideitem {
@@ -181,38 +183,42 @@
       background-size: 50%;
       background-repeat: no-repeat;
     }
-
+    
     [id="slide01"]:checked~.slidelist .slideitem {
       transform: translateX(0);
-      animation: slide01 20s infinite;
+      animation: slide01 10s infinite;
     }
 
     [id="slide02"]:checked~.slidelist .slideitem {
       transform: translateX(-100%);
+      animation: slide02 10s infinite;
     }
 
     [id="slide03"]:checked~.slidelist .slideitem {
       transform: translateX(-200%);
+      animation: slide03 10s infinite ;
     }
 
     [id="slide04"]:checked~.slidelist .slideitem {
       transform: translateX(-300%);
-    }
-
+      animation: slide04 10s
+    } 
+  
     @keyframes slide01 {
       0%, 100% {
         left: 0%;
       }
       25% {
-        left: -100%;
+        left: -50%;
       }
       50% {
-        left: -200%;
+        left: -50%;
       }
       75% {
-        left: -300%;
+        left: -50%;
       }
     }
+    
     @keyframes slide02 {
       0%, 100% {
         left: 100%;
@@ -533,7 +539,7 @@
                 <div>
                   <label for="slide01" class="left"></label>
                   <label for="slide03" class="right"></label>
-                  <img src="img/test2.jpg">
+                  <img src="img/profile.jpg">
                 </div>
               </li>
               <li class="slideitem">
