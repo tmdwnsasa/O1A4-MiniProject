@@ -13,18 +13,29 @@
     /* 나린님, 민준님 */
     /* width : 80%
       margin : 0 auto 0 auto; */
-
-    body {
-      background-image: url("https://img.freepik.com/free-vector/neon-geometric-border-dark-purple-background-vector_53876-170450.jpg?t=st=1713337697~exp=1713341297~hmac=22f84489ea098215178fc77ccbaee76790e7d761d42c51e86cb350d147e04076&w=740");
-      background-size:cover;
+      
+    @font-face {
+      font-family: 'PyeongChangPeace-Bold';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
     }
 
-    /* 
-.mymain {
-  width: 80%;
-  margin: 0 auto 0 auto
-} */
+    @font-face {
+    font-family: 'WavvePADO-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/WavvePADO-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
+    * {
+      font-family: 'WavvePADO-Regular';
+    }
+
+    body {
+      background-image: url('미니프로젝트 배경.png');
+      background-size: cover;
+    }
 
     .mytitle {
       display: flex;
@@ -32,12 +43,17 @@
       align-items: center;
       justify-content: center;
 
-      background-color: green;
       background-size: cover;
 
       height: 150px;
+      color: #7d5959;
+      margin-top: 2%;
     }
-
+    
+    .mytitle>h1 {
+      font-family: 'PyeongChangPeace-Bold';
+    }
+    
     .mainimg {
       height: 500px;
     }
@@ -48,23 +64,31 @@
       align-items: center;
       justify-content: center;
 
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.pexels.com/photos/633520/pexels-photo-633520.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+      /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.pexels.com/photos/633520/pexels-photo-633520.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
       background-size: cover;
-      background-position: center 900px;
+      background-position: center 900px; */
+
+      background-color: rgba(255, 255, 255, 0.2);
+
+      border: 5px solid white;
+      border-radius: 15px;
+      box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
 
       margin: 30px;
 
-      color: white;
+      color: #4d3838;
     }
 
     #teamint {
       margin-left: 50px;
       margin-right: auto;
+      width: 20%;
     }
 
     #pjtint {
-      margin-left: 50px;
-      margin-right: auto;
+      margin: 100px auto auto auto;
+      width: 20%;
+      text-align: center;
     }
 
     .myhome>div>span {
@@ -84,12 +108,12 @@
     .card {
       height: 400px;
       border-radius: 10px;
-      padding : 3px 3px 3px 3px;
+      padding: 3px 3px 3px 3px;
       margin-left: 80px;
-      box-shadow: 1px 1px 5px 1px gray;
-      background-color: white; 
+      box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+      background-color: white;
     }
-    
+
     .card-img-top {
       border-radius: 10px;
       height: 350px;
@@ -97,8 +121,8 @@
       object-fit: cover;
     }
 
-    .card-body{
-      width : 100%;
+    .card-body {
+      width: 100%;
       height: 50PX;
       display: flex;
       align-items: center;
@@ -111,15 +135,20 @@
     }
 
 
-     #cardlink2{
-      color: black;
+    #cardlink2 {
+      color: #4d3838;
       text-decoration-line: none;
-     }
+    }
 
     /* ================================================================= */
     /* 민수님 */
+    .emptyspace {
+      height: 300px;
+    }
 
-
+    .projectslide {
+      transform: scale(1.4);
+    }
 
     ul,
     li {
@@ -141,12 +170,17 @@
     }
 
     .slidebox .slidelist {
+      padding-left: 0;
       white-space: nowrap;
       font-size: 0;
       overflow: hidden;
+
+      border-radius: 15px;
+      box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
     }
 
     .slidebox .slideitem {
+      height: 350px;
       position: relative;
       display: inline-block;
       vertical-align: middle;
@@ -184,7 +218,7 @@
 
     [id="slide01"]:checked~.slidelist .slideitem {
       transform: translateX(0);
-      animation: slide01 20s infinite;
+      /* animation: slide01 20s infinite; */
     }
 
     [id="slide02"]:checked~.slidelist .slideitem {
@@ -200,61 +234,102 @@
     }
 
     @keyframes slide01 {
-      0%, 100% {
+
+      0%,
+      100% {
         left: 0%;
       }
+
       25% {
         left: -100%;
       }
+
       50% {
         left: -200%;
       }
+
       75% {
         left: -300%;
       }
     }
+
     @keyframes slide02 {
-      0%, 100% {
+
+      0%,
+      100% {
         left: 100%;
       }
+
       25% {
         left: 0%;
       }
+
       50% {
         left: -100%;
       }
+
       75% {
         left: -200%;
       }
     }
+
     @keyframes slide03 {
-      0%, 100% {
+
+      0%,
+      100% {
         left: 200%;
       }
+
       25% {
         left: 100%;
       }
+
       50% {
         left: 0%;
       }
+
       75% {
         left: -100%;
       }
     }
+
     @keyframes slide04 {
-      0%, 100% {
+
+      0%,
+      100% {
         left: 300%;
       }
+
       25% {
         left: 200%;
       }
+
       50% {
         left: 100%;
       }
+
       75% {
         left: 0%;
       }
     }
+
+    .col {
+      color: #4d3838;
+      font-weight: bold;
+    }
+
+    .col_title {
+      font-weight: 1000;
+    }
+
+    .col_content {
+      line-height: 200%;
+    }
+
+
+
+
+
 
     /* ================================================================= */
     .EntireGuestBook {
@@ -342,8 +417,8 @@
       padding-left: 10px;
     }
   </style>
-<script>
-     function zoomIn(event) {
+  <script>
+    function zoomIn(event) {
       event.target.style.transform = "scale(1.07)"; //1.2배 확대
       event.target.style.zIndex = 1;
       event.target.style.transition = "all 0.5s"; // 속도
@@ -354,9 +429,9 @@
       event.target.style.zIndex = 0;
       event.target.style.transition = "all 0.3s";
     }
-</script>
+  </script>
   <script type="module">
-    
+
     // Firebase SDK 라이브러리 가져오기
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
     import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
@@ -380,7 +455,7 @@
     // Firebase 인스턴스 초기화
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
-    
+
     // 현재 날짜와 시간을 가져오기
     const currentDate = new Date();
 
@@ -397,11 +472,11 @@
     $("#btn-submit").click(async function () {
       let username = $('#username').val();
       let comment = $('#comment').val();
-      if(username==""){
+      if (username == "") {
         alert('이름이 입력되지 않았습니다.');
         return 0;
       }
-      if(comment==""){
+      if (comment == "") {
         alert('내용이 입력되지 않았습니다.');
         return 0;
       }
@@ -415,7 +490,7 @@
       window.location.reload();
     })
 
-    const items = query(collection(db,"MiniProject"), orderBy("date", "desc"))
+    const items = query(collection(db, "MiniProject"), orderBy("date", "desc"))
     let docs = await getDocs(items);
 
     docs.forEach((doc) => {
@@ -442,21 +517,24 @@
 
   <div class="mymain">
     <div class="mytitle">
-      <h1 style="font-size: 50px">O1A4</h1>
+      <h1 style="font-size: 100px">O1A4</h1>
     </div>
     <div class="myhome">
       <div id="teamint">
-        <span>안녕하세요 O1A4입니다</span><br>
-        팀소개글팀소개글팀소개글팀소개글팀소개글<br>
-        팀소개글팀소개글팀소개글팀소개글팀소개글<br>
-        팀소개글팀소개글팀소개글팀소개글팀소개글<br>
-        팀소개글팀소개글팀소개글팀소개글팀소개글<br>
+        <span>저희는 O형 1명, A형 4명인 팀 <br>
+         "O1A4"입니다!<br></span>
+        <br>
+        &nbsp;우리 팀이 생각하는 가장 중요한 부분은 협업과 소통입니다.
+        주기적인 회의를 통해 코드 리뷰와 피드백을 진행하기 때문에
+        서로 몰랐던 부분은 새로운 지식으로 쌓이고, 그로 인한 경험으로 모두가 성장하고 있습니다.<br>
+        &nbsp;개인 역량을 존중하며 긍정적인 분위기 속에서 작업하고 있습니다 🙂<br>
+        &nbsp;앞으로도 도전을 두려워하지 않고 열심히 해서 최종 목표인 취업을 할 수 있도록 노력하겠습니다.<br>
       </div>
-      <img class="mainimg"
-        src="https://images.pexels.com/photos/1424536/pexels-photo-1424536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+      <img class="mainimg" src="홈이미지.png">
       <div id="pjtint">
-        <span><a href="#pjt01" style="color:white">프로젝트 이름<br></a></span>
-        어떤 프로젝트인지 간단하게 설명하는 글
+        <span>목차<br><br></span>
+        <strong><a href="#pjt" style="color:white; font-size: x-large;">1. 프로젝트</a></strong><br><br>
+        <strong><a href="#EntireGuestBook" style="color:white; font-size: x-large;">2. 방명록</a></strong>
       </div>
     </div>
   </div>
@@ -465,106 +543,120 @@
     <div class="profile">
 
       <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
-       <a href="JYJ.html" class="card-link" id="cardlink2">
-        <img src="PhotoJYJ.png" class="card-img-top" />
-        <div class="card-body">
-          <h5 class="card-title">정윤제(리더)</h5>         
-        </div>
-       </a>
-      </div>
-
-      <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
-       <a href="cms_profile.html" class="card-link" id="cardlink2">
-        <img src="img/profile.jpg" class="card-img-top" />
-        <div class="card-body">
-          <h5 class="card-title">조민수</h5>
-        </div>
-       </a>
-      </div>
-
-      <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
-       <a href="knl.html" class="card-link" id="cardlink2">
-        <img src="nl_image.jpg" class="card-img-top" />
-        <div class="card-body">
-          <h5 class="card-title">김나린</h5>
-        </div>
-       </a>
-      </div>
-
-       <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
-        <a href="LMJ.html" class="card-link" id="cardlink2">
-        <img src="mj_image.jpg" class="card-img-top" />
-         <div class="card-body">
-          <h5 class="card-title">이민준</h5>          
-         </div>
+        <a href="JYJ.html" class="card-link" id="cardlink2">
+          <img src="PhotoJYJ.png" class="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title">정윤제(리더)</h5>
+          </div>
         </a>
-       </div>
-      
-       <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)"  onmouseleave="zoomOut(event)">
-       <a href="LJH.html" class="card-link" id="cardlink2">
-        <img src="LJHPHOTOFINAL.jpg" class="card-img-top" />
-        <div class="card-body">
-          <h5 class="card-title">이지훈</h5>          
-         </div>
-       </a>
+      </div>
+
+      <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+        <a href="cms_profile.html" class="card-link" id="cardlink2">
+          <img src="img/profile.jpg" class="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title">조민수</h5>
+          </div>
+        </a>
+      </div>
+
+      <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+        <a href="knl.html" class="card-link" id="cardlink2">
+          <img src="nl_image.jpg" class="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title">김나린</h5>
+          </div>
+        </a>
+      </div>
+
+      <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+        <a href="LMJ.html" class="card-link" id="cardlink2">
+          <img src="mj_image.jpg" class="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title">이민준</h5>
+          </div>
+        </a>
+      </div>
+
+      <div class="card" style="width: 17rem" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)">
+        <a href="LJH.html" class="card-link" id="cardlink2">
+          <img src="LJHPHOTOFINAL.jpg" class="card-img-top" />
+          <div class="card-body">
+            <h5 class="card-title">이지훈</h5>
+          </div>
+        </a>
       </div>
 
     </div>
   </div>
+  <div class="emptyspace">
+
+  </div>
   <!-- ================================================================= -->
-  <div class="container-md" id="pjt01">
-    <div id="content" class="row">
-      <div id="left_section" class="col text center">
-        <div>
-          <div class="slidebox">
-            <input type="radio" name="slide" id="slide01" checked>
-            <input type="radio" name="slide" id="slide02">
-            <input type="radio" name="slide" id="slide03">
-            <input type="radio" name="slide" id="slide04">
-            <ul class="slidelist">
-              <li class="slideitem">
-                <div>
-                  <label for="slide04" class="left"></label>
-                  <label for="slide02" class="right"></label>
-                  <img src="img/profile.jpg">
-                </div>
-              </li>
-              <li class="slideitem">
-                <div>
-                  <label for="slide01" class="left"></label>
-                  <label for="slide03" class="right"></label>
-                  <img src="img/test2.jpg">
-                </div>
-              </li>
-              <li class="slideitem">
-                <div>
-                  <label for="slide02" class="left"></label>
-                  <label for="slide04" class="right"></label>
-                  <img src="img/profile.jpg">
-                </div>
-              </li>
-              <li class="slideitem">
-                <div>
-                  <label for="slide03" class="left"></label>
-                  <label for="slide01" class="right"></label>
-                  <img src="img/profile.jpg">
-              </li>
-            </ul>
+  <div class="projectslide">
+    <div class="container-md" id="pjt">
+      <div id="content" class="row">
+        <div id="left_section" class="col text center">
+          <div>
+            <div class="slidebox">
+              <input type="radio" name="slide" id="slide01" checked>
+              <input type="radio" name="slide" id="slide02">
+              <input type="radio" name="slide" id="slide03">
+              <input type="radio" name="slide" id="slide04">
+              <ul class="slidelist">
+                <li class="slideitem">
+                  <div>
+                    <label for="slide04" class="left"></label>
+                    <label for="slide02" class="right"></label>
+                    <img src="미니프로젝트01.png">
+                  </div>
+                </li>
+                <li class="slideitem">
+                  <div>
+                    <label for="slide01" class="left"></label>
+                    <label for="slide03" class="right"></label>
+                    <img src="미니프로젝트02.png">
+                  </div>
+                </li>
+                <li class="slideitem">
+                  <div>
+                    <label for="slide02" class="left"></label>
+                    <label for="slide04" class="right"></label>
+                    <img src="img/profile.jpg">
+                  </div>
+                </li>
+                <li class="slideitem">
+                  <div>
+                    <label for="slide03" class="left"></label>
+                    <label for="slide01" class="right"></label>
+                    <img src="미니프로젝트04.png">
+                </li>
+              </ul>
+            </div>
           </div>
+        </div><!--left_section.끝나는태그-->
+        <div id="right_section class" class="col">
+          <h3 class="col_title">미니 팀프로젝트</h3>
+          <p class="col_content">
+            1. 메인화면 - 단체사진과 글씨를 클릭하면 해당 스크롤로 이동하는 목차<br>
+            2. 개인 프로필 카드 - 카드 클릭 시 각자 제작한 개인 프로필 페이지로 이동<br>
+            3. 프로젝트 슬라이드 - 프로젝트에 대한 간략한 설명<br>
+            4. 방명록 - 페이지를 방문한 사람들의 방명록
+          </p>
         </div>
-      </div><!--left_section.끝나는태그-->
-      <div id="right_section class" class="col">
-        <h3>프로젝트명</h3>
-        <p> 프로젝트내용</p>
       </div>
     </div>
+  </div>
+
+  <div class="emptyspace">
+
   </div>
   <!-- ================================================================= -->
   <div class="EntireGuestBook" , id="EntireGuestBook">
 
     <div class="CommentField">
       <div class="EntireGuestBookTitle">
-        <strong>방명록<br>O1A4 팀페이지에 오신 당신! 설마 그대로 가실건 아니죠...?</strong> 
+        <strong>방명록<br>O1A4 팀페이지에 오신 당신! 설마 그대로 가실건 아니죠...?</strong>
       </div>
       <div class="form-floating-name">
         <div class="form-floating name">
